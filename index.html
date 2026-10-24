@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VegStroller | Luxury Family Travel & Pure-Veg Experiences</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+    :root {
+        --charcoal: #121212;
+        --gold: #D4AF37;
+        --cream: #FAF9F6;
+        --text-dark: #2C2C2C;
+        --text-light: #7A7A7A;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        background-color: var(--cream);
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: 'Cinzel', serif;
+        font-weight: 400;
+        color: var(--charcoal);
+        margin: 0;
+    }
+
+    /* Elegant Transparent Header */
+    header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 30px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 10;
+    }
+
+    .logo {
+        font-family: 'Cinzel', serif;
+        font-size: 28px;
+        letter-spacing: 4px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    /* Hero Section - Full Screen */
+    .hero {
+        height: 100vh;
+        /* Aspirational luxury travel image */
+        background: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.6)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop') center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        color: #fff;
+        font-size: 64px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        max-width: 900px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    .btn-primary {
+        background-color: transparent;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        padding: 15px 40px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--gold);
+        color: var(--charcoal);
+    }
+
+    /* Philosophy / Why Us Section */
+    .philosophy {
+        padding: 100px 20px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .philosophy h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .philosophy p {
+        font-size: 18px;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.8;
+    }
+
+    /* The 3 Pillars (Services & Benefits) */
+    .pillars {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto 100px auto;
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    .pillar-card {
+        flex: 1;
+        background: #fff;
+        padding: 50px 30px;
+        text-align: center;
+        border-top: 3px solid var(--gold);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    .pillar-icon {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .pillar-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .pillar-card p {
+        color: var(--text-light);
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .pillar-link {
+        color: var(--gold);
+        text-decoration: none;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+
+    /* As Seen On / Social Proof */
+    .social-proof {
+        background-color: #fff;
+        padding: 60px 20px;
+        text-align: center;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    .social-proof p {
+        font-family: 'Cinzel', serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: var(--text-light);
+        margin-bottom: 30px;
+    }
+
+    .brand-logos {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        opacity: 0.6;
+        font-family: 'Cinzel', serif;
+        font-size: 20px;
+        color: var(--charcoal);
+    }
+
+    /* Lead Magnet Footer */
+    .join-club {
+        background-color: var(--charcoal);
+        color: #fff;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .join-club h2 {
+        color: #fff;
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .join-club p {
+        color: #ccc;
+        max-width: 600px;
+        margin: 0 auto 40px auto;
+        font-weight: 300;
+    }
+
+    .email-capture input {
+        padding: 15px 20px;
+        width: 300px;
+        border: 1px solid #444;
+        background: transparent;
+        color: #fff;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .email-capture button {
+        padding: 16px 30px;
+        background: var(--gold);
+        border: none;
+        color: var(--charcoal);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        header { flex-direction: column; background: var(--charcoal); padding: 20px; position: relative; }
+        nav a { margin: 0 10px; }
+        .hero h1 { font-size: 40px; }
+        .pillars { flex-direction: column; }
+        .brand-logos { flex-direction: column; gap: 20px; }
+        .email-capture input { width: 100%; margin-bottom: 10px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">VegStroller</div>
+    <nav>
+        <a href="#">The Blueprints</a>
+        <a href="#">Luxury Stays</a>
+        <a href="#">Veg Dining</a>
+        <a href="#">Media Kit</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>The Art of Pure-Vegetarian Luxury Travel</h1>
+    <p>Curated Experiences for the Modern Indian Family</p>
+    <a href="#pillars" class="btn-primary">Explore Our Expertise</a>
+</div>
+
+<div class="philosophy">
+    <h2>Uncompromising Standards</h2>
+    <p>You shouldn't have to choose between a 5-star experience and your family's dietary values. At VegStroller, we take the guesswork out of multi-generational travel. We personally vet premium properties and curate slow-travel itineraries so you can focus on what matters most: making memories with your children and parents.</p>
+</div>
+
+<div id="pillars" class="pillars">
+    <!-- Pillar 1 -->
+    <div class="pillar-card">
+        <div class="pillar-icon">🗺️</div>
+        <h3>Travel Blueprints</h3>
+        <p>Step-by-step, slow-travel itineraries perfectly paced for kids and seniors. Avoid the tourist traps and travel with our exact routes for Singapore, Kashmir, and Meghalaya.</p>
+        <a href="#" class="pillar-link">View Itineraries →</a>
+    </div>
+
+    <!-- Pillar 2 -->
+    <div class="pillar-card">
+        <div class="pillar-icon">🛎️</div>
+        <h3>Curated Luxury Stays</h3>
+        <p>Honest reviews of 4 and 5-star properties graded on family amenities and pure-veg culinary excellence. Find your next stay and book our vetted recommendations directly.</p>
+        <a href="#" class="pillar-link">Read Hotel Reviews →</a>
+    </div>
+
+    <!-- Pillar 3 -->
+    <div class="pillar-card">
+        <div class="pillar-icon">🍽️</div>
+        <h3>The Veg Directory</h3>
+        <p>Our exclusive global database of premium vegetarian-friendly restaurants and hidden culinary gems, ensuring your family eats flawlessly anywhere in the world.</p>
+        <a href="#" class="pillar-link">Explore Dining →</a>
+    </div>
+</div>
+
+<div class="social-proof">
+    <p>TRUSTED BY OVER 10,000 AFFLUENT TRAVELERS & PREMIUM PARTNERS</p>
+    <div class="brand-logos">
+        <span>TAJ HOTELS</span>
+        <span>THE KHYBER</span>
+        <span>MARRIOTT BONVOY</span>
+    </div>
+</div>
+
+<div class="join-club">
+    <h2>Join the Inner Circle</h2>
+    <p>Subscribe to receive our latest luxury family blueprints, early access to exclusive property reviews, and pure-veg travel hacks directly to your inbox.</p>
+    <div class="email-capture">
+        <input type="email" placeholder="Your Email Address">
+        <button>Subscribe</button>
+    </div>
+</div>
+
+</body>
+</html>

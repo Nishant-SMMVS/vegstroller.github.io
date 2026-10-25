@@ -162,53 +162,1317 @@
     // THE MASTER DATABASE
     // =========================================================================
     
-    // 1. ZONES (The Top Level)
+// 1. ZONES (The Top Level)
     const zones = [
-        { name: "India", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800" },
-        { name: "Southeast Asia", image: "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=800" },
-        { name: "Europe", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800" },
-        { name: "Middle East", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800" }
+        { name: "North India", image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800" },
+        { name: "South India", image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800" },
+        { name: "West India", image: "https://images.unsplash.com/photo-1582719478250-c89d14c77345?q=80&w=800" },
+        { name: "North East India", image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800" },
+        { name: "International", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800" }
     ];
 
     // 2. REGIONS (The Second Level)
     const regions = [
-        { zone: "India", name: "Maharashtra", image: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=800" },
-        { zone: "India", name: "Kashmir", image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800" },
-        { zone: "India", name: "Meghalaya", image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800" },
-        { zone: "Southeast Asia", name: "Singapore", image: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?q=80&w=800" },
-        { zone: "Middle East", name: "UAE", image: "https://images.unsplash.com/photo-1582610116397-edb318620f90?q=80&w=800" }
+        { zone: "North India", name: "Jammu & Kashmir", image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800" },
+        { zone: "North India", name: "Uttarakhand", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800" },
+        { zone: "West India", name: "Maharashtra", image: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=800" },
+        { zone: "West India", name: "Gujarat", image: "https://images.unsplash.com/photo-1587222318667-31212ce2828d?q=80&w=800" },
+        { zone: "West India", name: "Goa", image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800" },
+        { zone: "South India", name: "Kerala", image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800" },
+        { zone: "North East India", name: "Meghalaya", image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800" },
+        { zone: "International", name: "Austria", image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?q=80&w=800" },
+        { zone: "International", name: "Germany", image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800" },
+        { zone: "International", name: "Italy", image: "https://images.unsplash.com/photo-1516483638261-f40af5a5ae5a?q=80&w=800" },
+        { zone: "International", name: "Switzerland", image: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=800" },
+        { zone: "International", name: "UAE", image: "https://images.unsplash.com/photo-1582610116397-edb318620f90?q=80&w=800" },
+        { zone: "International", name: "Thailand", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800" },
+        { zone: "International", name: "Singapore", image: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?q=80&w=800" },
+        { zone: "International", name: "Malaysia", image: "https://images.unsplash.com/photo-1596422846543-74c6fc0e24f8?q=80&w=800" },
+        { zone: "International", name: "France", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800" }
     ];
-
     // 3. HOTELS (The Final Level)
-    const hotels = [
-        {
-            region: "Maharashtra",
-            city: "Mumbai",
-            name: "Taj Mahal Palace",
-            image: "https://images.unsplash.com/photo-1582719478250-c89d14c77345?q=80&w=800",
-            badge: "Iconic",
-            bullets: ["Legendary Jain and Pure-Veg dining", "World-class heritage tours for families", "Unmatched Gateway of India views"],
-            agodaLink: "#"
-        },
-        {
-            region: "Maharashtra",
-            city: "Pune",
-            name: "JW Marriott",
-            image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800",
-            badge: "Family Friendly",
-            bullets: ["Massive Sunday brunch with veg counters", "Excellent kids club and pool area", "Central location for city exploration"],
-            agodaLink: "#"
-        },
-        {
-            region: "Meghalaya",
-            city: "Shillong",
-            name: "Courtyard by Marriott",
-            image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
-            badge: "Top Pick",
-            bullets: ["Phenomenal pure-veg breakfast spread", "Heated indoor pool (perfect for kids)", "Modern, accessible family suites"],
-            agodaLink: "#"
-        }
-    ];
+const hotels = [
+    {
+        name: "The Khyber Himalayan Resort & Spa",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Gulmarg",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "5* Hotel Resort",
+        bullets: ["The best property in entire Gulmarg", "5-10 min walk to Gondola", "We visited here for evening snacks in May 2026 :)", "Luxurious 5* resort with beautiful view of surroundings - Snow capped mountains, green pine trees and lush green meadows (during summers :))"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=394085"
+    },
+    {
+        name: "Vintage",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Gulmarg",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=460460"
+    },
+    {
+        name: "Kolahoi Green",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Gulmarg",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=78432841"
+    },
+    {
+        name: "Early Beck",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Movera, Pahalgam",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Boutique Hotel",
+        bullets: ["Newly constructed boutique hotel which can be classified as 4*", "Decent veg options in buffet dinner/bf.", "Near to rafting point", "Has lift facility"],
+        agodaLink: "#"
+    },
+    {
+        name: "Radisson Golf Resort",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Pahalgam",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=297651"
+    },
+    {
+        name: "Welcome Hotel by ITC Pine N Peak",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Pahalgam",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=400632"
+    },
+    {
+        name: "Chinar Resort & Spa",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Pahalgam",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "#"
+    },
+    {
+        name: "Hotel Heevan by Ahad group",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Pahalgam",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=111338"
+    },
+    {
+        name: "Four Points by Sheraton",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Sonmarg",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=55173045"
+    },
+    {
+        name: "Radisson Sonmarg",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Sonmarg",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=25968455"
+    },
+    {
+        name: "Villa Cottage",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Srinagar",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Farm Stay / Villa Cottages",
+        bullets: ["Set amidst fruit orchards like apple, apricot etc, this is an extremely beautiful place surrounded by nature, greenery, neatly manicured laws", "Lots of open spaces for kids to play", "Extremely peaceful place where you will be able to hear birds chirping throughout the day", "Duplex type independent cottages with kitchen attached"],
+        agodaLink: "#"
+    },
+    {
+        name: "Lalit Grand Palace",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Srinagar",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "5* Hotel",
+        bullets: ["Beautiful and huge property at the heart of Srinagar", "Earstwhile palace of the king Maharaja Pratap Singh", "Has all weather indoor swimming pool", "Note: We have not stay at this property yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=154806"
+    },
+    {
+        name: "Ramada Encore by Wyndham Rajbagh",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Srinagar",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=63283136"
+    },
+    {
+        name: "Taj Dal View",
+        zone: "North India",
+        region: "Jammu & Kashmir",
+        city: "Srinagar – Near Dal Lake",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "5* Hotel Resort",
+        bullets: ["Its a Taj :)", "Beautiful place with so many instaworthy viewpoints", "Beautiful views of Dal lake & mountains from almost everywhere in the hotel", "Huge rooms with balcony overlooking Dal lake"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=288010"
+    },
+    {
+        name: "Organic Village Retreat (Hunder)",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Hunder (Nubra Valley)",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=22506828"
+    },
+    {
+        name: "Pal Hotel",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Leh",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "4* Hotel",
+        bullets: ["Centralized heating making it a perfect hotel for cold season", "Beautiful, neat and clean 4* property", "Walkable to Leh market", "View of Himalayas from the room"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=37825675"
+    },
+    {
+        name: "Togochey",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Leh",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Neat and clean property", "View of Himalayas from the room", "In house restaurant and good food", "Hot water facility in each room"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=37825675"
+    },
+    {
+        name: "Zostel",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Leh",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Hostel",
+        bullets: ["Perfect for solo travelers", "Neat and clean property", "Sharing/Non sharing rooms fitting every budget", "Board games, books to relax"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=2577453"
+    },
+    {
+        name: "Sia-La Guest House",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Leh",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Hostel",
+        bullets: ["Perfect for one - two nights", "Neat and clean property", "Offer heaters in the room during cold season to help you stay warm", "Served hot and delicious parathas in breakfast"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=2577453"
+    },
+    {
+        name: "Grand Dragon (Leh)",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Leh",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=110648"
+    },
+    {
+        name: "Organic Boutique Hotel",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Leh – Hunder, Nubra",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Good for one - two nights", "Hot water available in washroom", "Neat and clean property", "Offer heaters in the room during very cold season to help you stay warm"],
+        agodaLink: "#"
+    },
+    {
+        name: "Thangzing House",
+        zone: "North India",
+        region: "Ladakh",
+        city: "Leh – Pangong (Man)",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Homestay",
+        bullets: ["She found it the best of her Ladakh trip stays", "Beautiful view of Pangong lake from rooms", "Warm hosts who take all care of your needs", "Neat and clean property"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=55335697"
+    },
+    {
+        name: "Trihari",
+        zone: "North India",
+        region: "Uttarakhand",
+        city: "Chauda Bigha, Rishikesh",
+        image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Ample car parking space (biggest advantage)", "3* property in close proximity to all places of importance", "Shared auto available to Triveni Ghat / Laxman Jhula", "Neat and clean rooms with a/c or non a/c options"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=3328356"
+    },
+    {
+        name: "Cidade De Goa Heritage",
+        zone: "West India",
+        region: "Goa",
+        city: "Central Goa – Vainguinim Beach (Near Dona Paula)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Its a Taj hotel", "Private & clean beach", "Resort style with lots of amenities", "Kids Activities and play area/slides"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=64006505"
+    },
+    {
+        name: "Cidade De Goa Horizon",
+        zone: "West India",
+        region: "Goa",
+        city: "Central Goa – Vainguinim Beach (Near Dona Paula)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Its a Taj hotel", "Kids Activities (puzzlies/toys for toddlers & small children)", "Infinity pool, Sauna and Steam facility", "Can access amenities of Cidade De Goa Heritage via free shuttle"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=64004171"
+    },
+    {
+        name: "Golden Tulip",
+        zone: "West India",
+        region: "Goa",
+        city: "North Goa – Candolim",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Comfortable rooms and decent food", "Kids indoor games like carroms, chess", "Just 5-10 min drive to Candolim beach", "Situated in peaceful area yet not very far from happening areas of North Goa"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=410705"
+    },
+    {
+        name: "Blu Resort",
+        zone: "West India",
+        region: "Goa",
+        city: "North Goa – Vagator",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["My office colleague stays here every year and highly recommends it :)", "2 km from Vagator beach", "Mediterranian style cottages surrounded with greenery", "Lots of open space for kids to run and play"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=14432535"
+    },
+    {
+        name: "Taj Exotica Resort & Spa",
+        zone: "West India",
+        region: "Goa",
+        city: "South Goa – Benaulim Beach",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Its a Taj hotel and among the top of our bucketlist :)", "Golf Course", "Private and clean beach", "Kids Activities"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=7395"
+    },
+    {
+        name: "Beleza By The Beach",
+        zone: "West India",
+        region: "Goa",
+        city: "South Goa – Colva / Betalbatim Beach",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Private and clean beach", "Spacious rooms", "Kids Activities", "Few shacks and eating joints are nearby"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=175187"
+    },
+    {
+        name: "Lalit",
+        zone: "West India",
+        region: "Goa",
+        city: "South Goa – Palolem",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["One of our bucket list hotels in Goa :)", "Resort property with amazing amenities", "Private and clean beach", "Golf course, Squash, Tennis, Game Zone"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=154789"
+    },
+    {
+        name: "Ramada",
+        zone: "West India",
+        region: "Gujarat",
+        city: "Ekta Nagar (Statue of Unity)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=10901672"
+    },
+    {
+        name: "Hotel BRG Budget Stay",
+        zone: "West India",
+        region: "Gujarat",
+        city: "Ekta Nagar (Statue of Unity) – Ekta Nagar",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Neat and clean 3* property", "Vegetarian hotel with in-house restaurant", "Rooms are big and neat", "Have huge park and small children play area"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=30141691"
+    },
+    {
+        name: "Taj Vivanta",
+        zone: "West India",
+        region: "Gujarat",
+        city: "Vadodara",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Its a Taj property :)", "Centrally located with close access to most of the things", "Autos, Cabs easily available from outside the hotel", "Was able to get food delivery from famous joints via Zomato"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=174419"
+    },
+    {
+        name: "Prakruti Resort",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Kashid",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["One of the best properties in Kashid", "Beach facing property", "Offers Spa, Swimming Pool, parks"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=419"
+    },
+    {
+        name: "Saffron Stays Alma Grove",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Kashid",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Beautiful property for entire family to relax", "Good food", "Swimming pool"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=36808107"
+    },
+    {
+        name: "Nisarg Farm Beach House Resort",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Kashid",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=59902055"
+    },
+    {
+        name: "Zostel Plus",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Lonavala",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=31218448"
+    },
+    {
+        name: "Dellas Resort",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Lonavala",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=281450"
+    },
+    {
+        name: "Princess Vista",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Lonavala",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=10567128"
+    },
+    {
+        name: "Goldfinch villa by Aaramghar Stays",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Lonavala – Lonavla Old Highway",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Bungalow / Villa",
+        bullets: ["Temperature Controlled Pool :)", "Neat, clean and spacious property", "Amazing meals", "4 Bedrooms which can accommodate max 12 people"],
+        agodaLink: "#"
+    },
+    {
+        name: "Fountain",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mahabaleshwar / Panchgani",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Its a Taj group hotel :)", "Provides amazing view of sunset", "Located in Mahabaleshwar with 10-15 min walk to market and restaurants", "Indoor amenities include Billiards, Foosball, PS5, Carrom, Chess, Ludo, Table Tennis, Legos"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=64281476"
+    },
+    {
+        name: "Gold Mist",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mahabaleshwar / Panchgani",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Bungalow / Villa",
+        bullets: ["Luxurious 3 BHK villa with amazing views", "Saffron Stay property", "Big lawns to relax, plan game of cricket and badminton with family members :)", "Neat, clean & spaceous property"],
+        agodaLink: "#"
+    },
+    {
+        name: "Nirmaan Bungalow",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mahabaleshwar / Panchgani",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Bungalow / Villa",
+        bullets: ["Neat, clean & spaceous property", "Located in Panchgani with 10 min walk to Vitthal Kamath restaurant and 10 min drive to Mapro garden", "Inhouse cook prepares fresh meals", "Can enjoy bonfire, books and board games available at property"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=5828751"
+    },
+    {
+        name: "Le Méridien Mahabaleshwar",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mahabaleshwar / Panchgani",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=810240"
+    },
+    {
+        name: "RamSukh Resorts",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mahabaleshwar / Panchgani",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=110684"
+    },
+    {
+        name: "Dawn Ecstasy by Stayvista",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mahabaleshwar / Panchgani",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=47074929"
+    },
+    {
+        name: "Zostel Plus",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mahabaleshwar / Panchgani",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=41487708"
+    },
+    {
+        name: "The Fern Residency",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mumbai (Chembur)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Hotel",
+        bullets: ["Good hotel with complimentary access to club and lots of amenities", "Indoor games - 3 TT tables, 2 Squash court, 2 Billiards table, Carroms, Ludo and many other board games", "Outdoor games - Badminton, Tennis, Pickleball, Football/Cricket Enclosed Turf", "Other amenities - Swimming pool, Gymnasium, Children play area with swings, slides and everything, Library with good collection of books, park for jogging/walking"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=394067"
+    },
+    {
+        name: "Taj President",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mumbai (Colaba)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Hotel",
+        bullets: ["Its a Taj :)", "Centrally located with close access to most of the things", "This is a business hotel, so there is no activity room for children", "Offers spa, gym and swimming pool"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=419"
+    },
+    {
+        name: "Taj Santa Cruz",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Mumbai (Santacruz)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Hotel",
+        bullets: ["Its a Taj :)", "Very close to Mumbai airport", "Few rooms have airport runway view. So you can literally see planes landing/taking off", "Windows were sealed and there was no noise of aeroplane inside the rooms"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=1128612"
+    },
+    {
+        name: "Novotel (East Pune)",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=547990"
+    },
+    {
+        name: "Hyatt (East Pune)",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=239812"
+    },
+    {
+        name: "Ritz Carlton (East Pune)",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=9375398"
+    },
+    {
+        name: "Westin (East Pune)",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=211950"
+    },
+    {
+        name: "Serene Eco Village",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby – Dhanep",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Amazing property with focus on healthy, sustainable living and eco tourism", "Large, clean and comfortable rooms", "Pure veg in-house restaurant offering good taste and decent choices", "Activities include trail walks to nearby dam, tour of their farm, trek to Torna fort, mountain and dam backwater trek, bonfire in night etc"],
+        agodaLink: "#"
+    },
+    {
+        name: "Blue Diamond",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby – East Pune (Koregaon Park)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Its a Taj property :)", "Close proximity to all happening places of East Pune (Airport, Railway Station, KP, Malls, Cafe, Pubs, Eating Joints etc)", "Few coloring activities to keep the kids engaged", "Good food and Live Flute performance"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=43912"
+    },
+    {
+        name: "Parc Estique",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby – East Pune (Viman Nagar)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Its a 4* business hotel", "3 min walk to Phoenix mall", "Close proximity to all happening places of East Pune (Airport, IT Parks, Malls, Cafe, Pubs, Eating Joints, KP, Kalyani Nagar etc)", "Big rooms and rooftop swimming pool"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=43912"
+    },
+    {
+        name: "Oxford Golf Resort",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby – Lavale, Bavdhan",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Easy to reach from Pune", "Good experience for one night stay even for kids and families", "All the rooms are suites which include sofa cum bed in living room and double bed/twin bed in bedroom.", "Rooms have a small kitchen area with microwave, induction stove, chimney. But cutlery is not provided."],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=298073"
+    },
+    {
+        name: "The Green Gate Resort",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby – Mulshi",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Amazing property with beautiful view of Mulshi lake from each room", "Each room offers a balcony to sit and enjoy the views of Mulshi lake", "Large, clean and comfortable rooms even in Deluxe category", "Each room can accommodate 1-2 extra beds easily if required (on extra payment basis)"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=38142398"
+    },
+    {
+        name: "Gypsy Soul",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby – Panshet",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Easy to reach from Pune", "Good experience for one night stay even for kids and families", "It has multiple stay options right from glam camping to regular camps and proper rooms", "Live music, Open air movie show, star gazing, fireflies watch during season are the highlights of stay"],
+        agodaLink: "#"
+    },
+    {
+        name: "Prana Resort",
+        zone: "West India",
+        region: "Maharashtra",
+        city: "Pune & nearby – Ravet",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Easy to reach from Pune", "Good experience for one night stay even for kids and families", "It has two type of stay options - tents and rooms. Rooms are near swimming pool and tent is near adventure zone/restaurant", "Beautiful ambience in night and Live music every night"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=72536974"
+    },
+    {
+        name: "Ramada by Wyndham",
+        zone: "South India",
+        region: "Kerala",
+        city: "Alleppey",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Resort",
+        bullets: ["50m from famous Boat Racing finishing point", "Amazing property in close proximity lake, beach and key area", "Note: Choose lake view rooms if going for boat race"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=545286"
+    },
+    {
+        name: "Taj Resorts and Spa Bekal",
+        zone: "South India",
+        region: "Kerala",
+        city: "Bekal",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Resort",
+        bullets: ["Its a Taj :)", "Very amazing property with beautiful rooms, lots of open spaces and greenery", "Private and clean beach", "Huge property with so many things to do within premises"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=294399"
+    },
+    {
+        name: "The Lalit Resorts and Spa",
+        zone: "South India",
+        region: "Kerala",
+        city: "Bekal",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=300798"
+    },
+    {
+        name: "Courtyard by Marriott Kochi",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=408961"
+    },
+    {
+        name: "Flora Airport Hotel & Convention Center",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=294650"
+    },
+    {
+        name: "Presidency Airport Hotel Kochi",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=46769065"
+    },
+    {
+        name: "Flyview Airport Residency",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=64332398"
+    },
+    {
+        name: "Dreams Paradise Airport Residency",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi Airport",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Budget Hotel",
+        bullets: ["3 min drive / 15 min walk from Kochi airport", "Hotel provides free cab for airport pickup/drop", "Very neat and clean property", "Quick to respond to queries over booking platforms"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=50560216"
+    },
+    {
+        name: "Taj Cochin International Airport",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi Airport",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Hotel",
+        bullets: ["Bang opposite to Kochi Airport", "Its a Taj :)", "1 min drive / 12 min walk from airport", "Note: Taj group property"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=64197782"
+    },
+    {
+        name: "Port Muziris",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi Airport",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Hotel",
+        bullets: ["Its a Marriott group property", "4 min drive / 15 min walk from airport", "Beautiful paintings in room and on hotel walls", "Business hotel with healthclub and swimming pool"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=7398520"
+    },
+    {
+        name: "Transit Suites by Grandwest",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kochi Airport",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "3* Hotel",
+        bullets: ["Neat and clean apartment", "3 km from Kochi airport", "Best suited for overnight stay if arriving/departing via late night flight", "Note: This is a budget hotel, so don't expect amenities and luxury"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=32606202"
+    },
+    {
+        name: "KTDC Resort",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kumarakom",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Resort",
+        bullets: ["Amazing property with beautiful rooms and lots of open spaces", "Bird santuary is within premises", "Amazing swimming pool", "Backwaters and houseboating can be done from here itself"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=36459352"
+    },
+    {
+        name: "Taj Resort & Spa",
+        zone: "South India",
+        region: "Kerala",
+        city: "Kumarakom",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Resort",
+        bullets: ["Its a Taj :)", "Amazing property in walkable distance to Bird Sanctuary", "Has a library and games room", "Note: Adjacent to the KTDC resort"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=43858"
+    },
+    {
+        name: "Dew Drops Resort",
+        zone: "South India",
+        region: "Kerala",
+        city: "Munnar",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "3* Farm Resort",
+        bullets: ["Very Neat and clean resort", "Farm resort with few pet animals, and lots of plantations and greenery", "In-house restaurant offers limited menu but tasty food", "In-house cardamom plantation with reasonable rates"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=1267128"
+    },
+    {
+        name: "Scenic",
+        zone: "South India",
+        region: "Kerala",
+        city: "Munnar",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Resort",
+        bullets: ["Its a Taj group property :)", "Very beautiful and scenic", "Has activity room for kids (Billiards, carroms, chess, slides, puzzles etc)", "You can also book rooms with walk-in swimming pool"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=64198492"
+    },
+    {
+        name: "KMansion @Homes",
+        zone: "South India",
+        region: "Kerala",
+        city: "Munnar",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Beautiful property with breathtaking views", "Jacuzzi pool", "Activity room with billiards, carroms", "Note: About 12 km from main Munnar town"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=36237301"
+    },
+    {
+        name: "Hotel Grand Plaza",
+        zone: "South India",
+        region: "Kerala",
+        city: "Munnar",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Located in main Munnar city"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=770186"
+    },
+    {
+        name: "Ambady Estate Resort",
+        zone: "South India",
+        region: "Kerala",
+        city: "Munnar",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=9886052"
+    },
+    {
+        name: "Abad Copper Castle Resort",
+        zone: "South India",
+        region: "Kerala",
+        city: "Munnar",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=43884"
+    },
+    {
+        name: "Avadale",
+        zone: "South India",
+        region: "Kerala",
+        city: "Thekkady",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Budget Hotel",
+        bullets: ["Small and clean property with lots of greenery", "Tasty food from their in-house restaurant", "Small activity room with carroms, chess, ludo and few books", "Iron box, Kettle, TV, hot water in shower, wifi in rooms are available"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=35906233"
+    },
+    {
+        name: "The Elms Homestay",
+        zone: "South India",
+        region: "Kerala",
+        city: "Thekkady",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=38704202"
+    },
+    {
+        name: "Abad Green Forest",
+        zone: "South India",
+        region: "Kerala",
+        city: "Thekkady",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=237375"
+    },
+    {
+        name: "The Mountain Courtyard",
+        zone: "South India",
+        region: "Kerala",
+        city: "Thekkady",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=1276159"
+    },
+    {
+        name: "Keys Prima by Lemon Tree",
+        zone: "South India",
+        region: "Kerala",
+        city: "Thekkady",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=37987033"
+    },
+    {
+        name: "Zostel",
+        zone: "East India",
+        region: "Meghalaya",
+        city: "Shillong",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hostel",
+        bullets: ["We have a stay coming up here soon :)"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=38547402"
+    },
+    {
+        name: "Courtyard",
+        zone: "East India",
+        region: "Meghalaya",
+        city: "Shillong",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=37367509"
+    },
+    {
+        name: "Windermere",
+        zone: "East India",
+        region: "Meghalaya",
+        city: "Shillong",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=46248590"
+    },
+    {
+        name: "Heritage Club Tripura Castle",
+        zone: "East India",
+        region: "Meghalaya",
+        city: "Shillong",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=2978351"
+    },
+    {
+        name: "Waldhouse Igls",
+        zone: "Europe",
+        region: "Austria",
+        city: "Innsbruck",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Apartment",
+        bullets: ["Beautiful property, very clean & safe neighborhood", "2-3 minutes walk from bus stand", "Garden, Swimming Pool, Spa, Amenities for Kids and Adults", "Nearby major attraction, trek routes and children parks"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hl=en-us&hid=320802"
+    },
+    {
+        name: "Airbnb apartment",
+        zone: "Europe",
+        region: "France",
+        city: "Paris",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Airbnb",
+        bullets: ["View of Eiffel Tower", "Complimentary welcome basket", "Complimentary breakfast", "Beautiful property, very clean & safe neighborhood"],
+        agodaLink: "#"
+    },
+    {
+        name: "Airbnb apartment",
+        zone: "Europe",
+        region: "France",
+        city: "Paris (near Disneyland)",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Airbnb",
+        bullets: ["Direct bus to Disneyland (~25 min drive)", "Nice property, very clean & safe neighborhood", "1-2 minutes walk to bus stand", "5-6 minutes walk to grocery store"],
+        agodaLink: "#"
+    },
+    {
+        name: "Friedrich Boutique",
+        zone: "Europe",
+        region: "Germany",
+        city: "Freiburg im Breisgau",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Apartment",
+        bullets: ["Across the road to Tram Station", "5 - 10 minutes walk to major shopping area and tourist attractions", "Safe neighborhood", "10-12 minutes walk to railway station"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hl=en-us&hid=7527957"
+    },
+    {
+        name: "Mercure Hotel",
+        zone: "Europe",
+        region: "Germany",
+        city: "Freiburg im Breisgau",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=2102408"
+    },
+    {
+        name: "Freiburg Apartments Friedriching",
+        zone: "Europe",
+        region: "Germany",
+        city: "Freiburg im Breisgau",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=7531773"
+    },
+    {
+        name: "Perdiana House",
+        zone: "Europe",
+        region: "Italy",
+        city: "Genova",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Apartment",
+        bullets: ["Beautiful house, very clean & safe neighborhood", "Equipped kitchen", "15 minutes drive to railway station / Genova port", "Note: Lift is from 1st floor (which feels like 2nd floor). You have to carry luggage till there"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hl=en-us&hid=4352204"
+    },
+    {
+        name: "Adventure Guesthouse",
+        zone: "Europe",
+        region: "Switzerland",
+        city: "Interlaken",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Beautiful views, very clean & safe neighborhood", "2-3 minutes walk to bus stand", "5-7 minutes walk to railway station", "Daily house keeping, offers basic breakfast"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hl=en-us&hid=9117253"
+    },
+    {
+        name: "Swiss Garden Hotel",
+        zone: "Southeast Asia",
+        region: "Malaysia",
+        city: "Kuala Lumpur",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Walkable to Monorail station", "Near to shopping hubs", "Can find Indian/Pakistani restaurants in short walking distance", "Basic amenities and breakfast"],
+        agodaLink: "#"
+    },
+    {
+        name: "Holiday Villa Beach Resort & Spa",
+        zone: "Southeast Asia",
+        region: "Malaysia",
+        city: "Langkawi",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Beautiful property, very clean & safe neighborhood", "Has private beach access", "Garden, Swimming Pool, Spa, Amenities for Kids and Adults", "Walking distance to Indian restaurants and grocery store"],
+        agodaLink: "#"
+    },
+    {
+        name: "Dayang Bay Resort",
+        zone: "Southeast Asia",
+        region: "Malaysia",
+        city: "Langkawi",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Resort",
+        bullets: ["Free stay for children aged upto 11 years", "Beautiful property, very clean & safe neighborhood", "Has water slides, kids play area, lots of open spaces", "Has indoor games like billiards and foosball"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=545188"
+    },
+    {
+        name: "Village Hotel Sentosa",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=6840955"
+    },
+    {
+        name: "W Singapore",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=399865"
+    },
+    {
+        name: "Marina Bay",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=185945"
+    },
+    {
+        name: "Fullerton Hotel",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=10589"
+    },
+    {
+        name: "M Hotel",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore City Center",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Big rooms", "Very clean property", "Attentive and friendly staff", "5 min walk to Tanjong Pagar MRT station"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=1192785"
+    },
+    {
+        name: "Ibis Budget Singapore Gold",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Geylang",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Very budget friendly", "Clean property with simple rooms", "15 minutes walk to nearest MRT (Kellong)", "Indian food options available nearby"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=37127755"
+    },
+    {
+        name: "Furama Riverfront",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Havelock",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Family Friendly and large hotel", "Has multiple type of rooms to suit different group sizes", "Bigger rooms", "Large swimming pool"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=10623"
+    },
+    {
+        name: "V Lavender",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Lavender",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Budget Friendly", "Large property with swimming pool", "Adjacent to nearest MRT (Lavender MRT)", "Modern hotel with multiple dining options nearby"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=254056"
+    },
+    {
+        name: "Hotel Boss",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Lavender/Bugis",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Favorite of Indian Tour Agents", "Budget Friendly", "Large property with swimming pool", "Will get Indian food options in buffet breakfast"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=1105091"
+    },
+    {
+        name: "Holiday Inn",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Little India",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Variety of Indian food options in breakfast", "Family friendly hotel", "Has Swimming Pool and Gym", "Walkable to Little India MRT station"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=1622759"
+    },
+    {
+        name: "Serangoon House Little India",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Little India",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Marriott property", "4 - 5 minutes from Ferrer MRT station", "Indian style decor", "Variety of Indian food options"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=71554"
+    },
+    {
+        name: "Aloft Novena",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Novena",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Marriott property", "Family friendly and large hotel with 2 wings", "Offers free breakfast for kids below 12 years", "Has 2-3 Indian options in breakfast"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=409796"
+    },
+    {
+        name: "Royal Plaza on Scots",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Orchard Road",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Spacious and modern rooms", "Large options of breakfast including Indian food", "2 - 3 minutes walk to Orchard MRT station", "Children upto 11 years can stay free with parents on existing bedding"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=10617"
+    },
+    {
+        name: "Yotel",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Orchard Road",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["We had booked this hotel initially but later changed due to room size", "Award winning hotel", "Compact but beautiful rooms with every inch of space being utilized", "High focus on cleanliness"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=2256959"
+    },
+    {
+        name: "Holiday Inn Express",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Orchard Road",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Free breakfast", "Family friendly hotel", "Variety of Indian food options in breakfast", "Family friendly hotel"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=478637"
+    },
+    {
+        name: "M Social",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Robertson Quay",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Instagram worthy hotel", "Award winning hotel", "Very beatiful lobby and hotel sitauted near riverside", "Great for couples"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=1192785"
+    },
+    {
+        name: "M Studio",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Robertson Quay",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Instagram worthy hotel", "Very beatiful lobby and hotel sitauted near riverside", "Great for couples", "Unique loft style rooms"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=165693"
+    },
+    {
+        name: "Hilton Garden Inn",
+        zone: "Southeast Asia",
+        region: "Singapore",
+        city: "Singapore – Serangoon",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Modern Clean rooms", "Very near to Mustafa Center and Little India MRT", "Variety of Indian food options in breakfast", "Family friendly hotel"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=2190890"
+    },
+    {
+        name: "A-One Bangkok Hotel",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Bangkok – Huey Kwang",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Neat and clean 4* hotel", "Swimming Pool, Gym", "Has vegetarian food options", "Free parking space"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=289578"
+    },
+    {
+        name: "Bangkok City Suite",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Bangkok – Siam",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Small but neat and clean property", "Near to 7-11 store, fruit market and tourist attractions", "Walkable to metro station", "Note: Buffet Breakfast does not have too many options for Indian vegetarians"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=289578"
+    },
+    {
+        name: "Lub d",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Koh Samui",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "4* Hostel/Hotel",
+        bullets: ["Neat and clean beach (Chaweng beach)", "Amazing property with direct beach access, games, two swimming pools and lots of happening activities", "Vibrant night-life and fire shows on the beach", "Board games like TT, Foosball, Air Hockey, Billiards"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=5828751"
+    },
+    {
+        name: "Ark Bar",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Koh Samui",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=159077"
+    },
+    {
+        name: "Al Resort",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Koh Samui",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=68930"
+    },
+    {
+        name: "Ibis",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Pattaya",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "4* Hotel",
+        bullets: ["Centrally located with close access to most of the things", "Walkable to mall (Terminal-21), beach, marts, museums etc", "Equipped kitchen", "15 minutes drive to railway station / Genova port"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=108170"
+    },
+    {
+        name: "Novotel",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Pattaya",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Luxury Stay",
+        bullets: ["Alternative option listed on the site, no review yet"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=10911"
+    },
+    {
+        name: "Ramada by Wyndham",
+        zone: "Southeast Asia",
+        region: "Thailand",
+        city: "Phuket",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "5* Hotel",
+        bullets: ["Amazing property in close proximity to all happening places", "Amazing buffet breakfast with lots of options for Indian vegetarians (Poha, Paratha, Puri, Upma, Idli etc)", "Indian menu available for lunch/dinner and prices are at-par with other restaurants", "Large rooms, Kids play area"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=890197"
+    },
+    {
+        name: "Savoy Suites Apartment",
+        zone: "Middle East",
+        region: "UAE",
+        city: "Dubai",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Studio Apartments",
+        bullets: ["Studio Apartments with kitchen cutlery, microwave, stove and fridge", "Swimming Pool", "Free bus shuttle to beach", "5-7 min walk to metro station"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hl=en-us&hid=37335015"
+    },
+    {
+        name: "Best Western Premier M Four Hotel",
+        zone: "Middle East",
+        region: "UAE",
+        city: "Dubai",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+        badge: "Hotel",
+        bullets: ["Beautiful property, large and comfortable beds", "Decent spread of buffet breakfast with Indian cuisine options", "Offers Luggage Storage space", "Near to gold and spice market"],
+        agodaLink: "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hl=en-us&hid=48756793"
+    },
+];
 
     // =========================================================================
     // THE ENGINE (Navigation Logic)

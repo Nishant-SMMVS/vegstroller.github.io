@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VegStroller | Global Luxury Concierge</title>
-<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=fuYWFOCjIXIxDHLMED6JnO6M2c7dybExHRbB5XY9stDtq1p7GTEmfLJCIZ8rTWzOhVU4IovO5z1mRZ3AnTS3OQfgt8ggcQaRgEjfA3ZAY7fwqNxGz0Wyirs2CEqy_5cih7Pb-uvZ0DF3x6Q9J8UIIgTCCVYxe1Sdezp_zryOpRLgYUK1lT-kQYzD_sPVh0xOfUqPTfvcmfniNVJEXjYHSP6LY9j1DUey5y-KRBfCufy7akVSSGP5fUkfrqM2jZ7kZzSi94Yzkh-bwDrLDUe8DtPvAsXSfxRcUKQJ2gXVE7cLc_uUhNuTqkoMe5RKn9-nRNfzpPUvAEW6sn3LdMhjGg" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pCbFlqYzNOV1EyTTJFek9UTmxZVGN3TURBd05qVmxZV1kyWVRjM1ptTTNPVEE0WlRFNFlUaGpaVEV5TmpOaE56RVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPXN0YXlzLmh0bWwmb3BpPTEwMzEzNTA1MCZhdXRodXNlcj00"/><style>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=R3lgAI0zh1QJSiLl-2UV0BT2-OK18kiZ9R5SDVP4btn4QQkcfRaCdyfgowdfaksA8qHc7ffbFTZUPADzGpqYHrHEQOnaCtsfFYIaPX2n6BuZGqw3RcevmPPiaAVwRgCmZg-oevSteTTnVvUb6cl_HRP9F3fML85RVb-H75o0Hc7Wq3Xlpc4T-edQ68R1Q8nuDTZhSqgsczQeVkwleHHbA2ZAvY0iQO8Ez2Qwj1Hi6gzgdAL0JeTUVwzW-oucrSUMSMrtqcB4SHATNG-0rMEuqqefMNahKhGgtLb6Ju7bkDtqhe-VXds7hxwF6mR2ghLdXnvMPiIwDtZcFgoRh4vlUg" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBek1XVTBObU0xTVRJME4ySTVZbU5tTURBd05qVmxZV1prWlRFMFl6Y3dOREE0WlRFNE1EVmtZV1F3WWpJNU0yUVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPXN0YXlzLmh0bWwmb3BpPTEwMzEzNTA1MCZhdXRodXNlcj00"/><style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
 
     :root {
@@ -188,6 +188,16 @@
     .card-badge {
         position: absolute; top: 15px; right: 15px; background: var(--gold); color: #fff; padding: 5px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     }
+    
+    .stay-verification {
+        background: #F9F6EE;
+        border-left: 3px solid var(--gold);
+        padding: 8px 12px;
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
 
     .card-content {
         padding: 30px;
@@ -196,7 +206,7 @@
         flex-direction: column;
     }
     .card-content h3 { font-size: 24px; margin-bottom: 5px; }
-    .card-location { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 20px; }
+    .card-location { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 15px; }
 
     /* Distinct Pros & Cons Section */
     .pros-cons-container {
@@ -297,7 +307,7 @@
 
 <script>
     // =========================================================================
-    // THE MASTER DATABASE (128 Properties)
+    // THE MASTER DATABASE (128 Properties with Verified Stay Notes)
     // =========================================================================
     const hotels = [
     {
@@ -307,6 +317,7 @@
         "city": "Gulmarg",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel Resort",
+        "basis": "We stayed (collaboration)",
         "pros": [
             "The best property in entire Gulmarg",
             "5-10 min walk to Gondola",
@@ -330,6 +341,7 @@
         "city": "Gulmarg",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -345,6 +357,7 @@
         "city": "Gulmarg",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -360,6 +373,7 @@
         "city": "Movera, Pahalgam",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Boutique Hotel",
+        "basis": "We stayed",
         "pros": [
             "Newly constructed boutique hotel which can be classified as 4*",
             "Decent veg options in buffet dinner/bf.",
@@ -382,6 +396,7 @@
         "city": "Pahalgam",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -397,6 +412,7 @@
         "city": "Pahalgam",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -412,6 +428,7 @@
         "city": "Pahalgam",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -427,6 +444,7 @@
         "city": "Pahalgam",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -442,6 +460,7 @@
         "city": "Sonmarg",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -457,6 +476,7 @@
         "city": "Sonmarg",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -472,6 +492,7 @@
         "city": "Srinagar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Farm Stay / Villa Cottages",
+        "basis": "We stayed",
         "pros": [
             "Set amidst fruit orchards like apple, apricot etc, this is an extremely beautiful place surrounded by nature, greenery, neatly manicured laws",
             "Lots of open spaces for kids to play",
@@ -497,6 +518,7 @@
         "city": "Srinagar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel",
+        "basis": "Recommended",
         "pros": [
             "Beautiful and huge property at the heart of Srinagar",
             "Earstwhile palace of the king Maharaja Pratap Singh",
@@ -514,6 +536,7 @@
         "city": "Srinagar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -529,6 +552,7 @@
         "city": "Srinagar \u2013 Near Dal Lake",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel Resort",
+        "basis": "We stayed (collaboration)",
         "pros": [
             "Its a Taj :)",
             "Beautiful place with so many instaworthy viewpoints",
@@ -553,6 +577,7 @@
         "city": "Hunder (Nubra Valley)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -568,6 +593,7 @@
         "city": "Leh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "4* Hotel",
+        "basis": "Recommended",
         "pros": [
             "Centralized heating making it a perfect hotel for cold season",
             "Beautiful, neat and clean 4* property",
@@ -593,6 +619,7 @@
         "city": "Leh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Neat and clean property",
             "View of Himalayas from the room",
@@ -617,6 +644,7 @@
         "city": "Leh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hostel",
+        "basis": "Recommended",
         "pros": [
             "Perfect for solo travelers",
             "Neat and clean property",
@@ -642,6 +670,7 @@
         "city": "Leh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hostel",
+        "basis": "Recommended",
         "pros": [
             "Perfect for one - two nights",
             "Neat and clean property",
@@ -664,6 +693,7 @@
         "city": "Leh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -679,6 +709,7 @@
         "city": "Leh \u2013 Hunder, Nubra",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Good for one - two nights",
             "Hot water available in washroom",
@@ -699,6 +730,7 @@
         "city": "Leh \u2013 Pangong (Man)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Homestay",
+        "basis": "Recommended",
         "pros": [
             "She found it the best of her Ladakh trip stays",
             "Beautiful view of Pangong lake from rooms",
@@ -720,6 +752,7 @@
         "city": "Chauda Bigha, Rishikesh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Ample car parking space (biggest advantage)",
             "3* property in close proximity to all places of importance",
@@ -741,6 +774,7 @@
         "city": "Central Goa \u2013 Vainguinim Beach (Near Dona Paula)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj hotel",
             "Private & clean beach",
@@ -765,6 +799,7 @@
         "city": "Central Goa \u2013 Vainguinim Beach (Near Dona Paula)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Its a Taj hotel",
             "Kids Activities (puzzlies/toys for toddlers & small children)",
@@ -785,6 +820,7 @@
         "city": "North Goa \u2013 Candolim",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Comfortable rooms and decent food",
             "Kids indoor games like carroms, chess",
@@ -803,6 +839,7 @@
         "city": "North Goa \u2013 Vagator",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "Recommended",
         "pros": [
             "My office colleague stays here every year and highly recommends it :)",
             "2 km from Vagator beach",
@@ -824,6 +861,7 @@
         "city": "South Goa \u2013 Benaulim Beach",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Its a Taj hotel and among the top of our bucketlist :)",
             "Golf Course",
@@ -846,6 +884,7 @@
         "city": "South Goa \u2013 Colva / Betalbatim Beach",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Private and clean beach",
             "Spacious rooms",
@@ -866,6 +905,7 @@
         "city": "South Goa \u2013 Palolem",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "One of our bucket list hotels in Goa :)",
             "Resort property with amazing amenities",
@@ -887,6 +927,7 @@
         "city": "Ekta Nagar (Statue of Unity)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -902,6 +943,7 @@
         "city": "Ekta Nagar (Statue of Unity) \u2013 Ekta Nagar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Neat and clean 3* property",
             "Vegetarian hotel with in-house restaurant",
@@ -923,6 +965,7 @@
         "city": "Vadodara",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj property :)",
             "Centrally located with close access to most of the things",
@@ -945,6 +988,7 @@
         "city": "Kashid",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "Recommended",
         "pros": [
             "One of the best properties in Kashid",
             "Beach facing property",
@@ -962,6 +1006,7 @@
         "city": "Kashid",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "Recommended",
         "pros": [
             "Beautiful property for entire family to relax",
             "Good food",
@@ -979,6 +1024,7 @@
         "city": "Kashid",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -994,6 +1040,7 @@
         "city": "Lonavala",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1009,6 +1056,7 @@
         "city": "Lonavala",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1024,6 +1072,7 @@
         "city": "Lonavala",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1039,6 +1088,7 @@
         "city": "Lonavala \u2013 Lonavla Old Highway",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Bungalow / Villa",
+        "basis": "We stayed",
         "pros": [
             "Temperature Controlled Pool :)",
             "Neat, clean and spacious property",
@@ -1061,6 +1111,7 @@
         "city": "Mahabaleshwar / Panchgani",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj group hotel :)",
             "Provides amazing view of sunset",
@@ -1086,6 +1137,7 @@
         "city": "Mahabaleshwar / Panchgani",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Bungalow / Villa",
+        "basis": "Recommended",
         "pros": [
             "Luxurious 3 BHK villa with amazing views",
             "Saffron Stay property",
@@ -1110,6 +1162,7 @@
         "city": "Mahabaleshwar / Panchgani",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Bungalow / Villa",
+        "basis": "We stayed",
         "pros": [
             "Neat, clean & spaceous property",
             "Located in Panchgani with 10 min walk to Vitthal Kamath restaurant and 10 min drive to Mapro garden",
@@ -1130,6 +1183,7 @@
         "city": "Mahabaleshwar / Panchgani",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1145,6 +1199,7 @@
         "city": "Mahabaleshwar / Panchgani",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1160,6 +1215,7 @@
         "city": "Mahabaleshwar / Panchgani",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1175,6 +1231,7 @@
         "city": "Mahabaleshwar / Panchgani",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1190,6 +1247,7 @@
         "city": "Mumbai (Chembur)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel",
+        "basis": "We stayed",
         "pros": [
             "Good hotel with complimentary access to club and lots of amenities",
             "Indoor games - 3 TT tables, 2 Squash court, 2 Billiards table, Carroms, Ludo and many other board games",
@@ -1215,6 +1273,7 @@
         "city": "Mumbai (Colaba)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj :)",
             "Centrally located with close access to most of the things",
@@ -1233,6 +1292,7 @@
         "city": "Mumbai (Santacruz)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj :)",
             "Very close to Mumbai airport",
@@ -1254,6 +1314,7 @@
         "city": "Pune & nearby",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1269,6 +1330,7 @@
         "city": "Pune & nearby",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1284,6 +1346,7 @@
         "city": "Pune & nearby",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1299,6 +1362,7 @@
         "city": "Pune & nearby",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1314,6 +1378,7 @@
         "city": "Pune & nearby \u2013 Dhanep",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "We stayed",
         "pros": [
             "Amazing property with focus on healthy, sustainable living and eco tourism",
             "Large, clean and comfortable rooms",
@@ -1335,6 +1400,7 @@
         "city": "Pune & nearby \u2013 East Pune (Koregaon Park)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj property :)",
             "Close proximity to all happening places of East Pune (Airport, Railway Station, KP, Malls, Cafe, Pubs, Eating Joints etc)",
@@ -1353,6 +1419,7 @@
         "city": "Pune & nearby \u2013 East Pune (Viman Nagar)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Its a 4* business hotel",
             "3 min walk to Phoenix mall",
@@ -1372,6 +1439,7 @@
         "city": "Pune & nearby \u2013 Lavale, Bavdhan",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "We stayed",
         "pros": [
             "Easy to reach from Pune",
             "Good experience for one night stay even for kids and families",
@@ -1399,6 +1467,7 @@
         "city": "Pune & nearby \u2013 Mulshi",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "We stayed",
         "pros": [
             "Amazing property with beautiful view of Mulshi lake from each room",
             "Each room offers a balcony to sit and enjoy the views of Mulshi lake",
@@ -1424,6 +1493,7 @@
         "city": "Pune & nearby \u2013 Panshet",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "We stayed",
         "pros": [
             "Easy to reach from Pune",
             "Good experience for one night stay even for kids and families",
@@ -1446,6 +1516,7 @@
         "city": "Pune & nearby \u2013 Ravet",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "We stayed",
         "pros": [
             "Easy to reach from Pune",
             "Good experience for one night stay even for kids and families",
@@ -1473,6 +1544,7 @@
         "city": "Alleppey",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Resort",
+        "basis": "Recommended",
         "pros": [
             "50m from famous Boat Racing finishing point",
             "Amazing property in close proximity lake, beach and key area"
@@ -1489,6 +1561,7 @@
         "city": "Bekal",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Resort",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj :)",
             "Very amazing property with beautiful rooms, lots of open spaces and greenery",
@@ -1512,6 +1585,7 @@
         "city": "Bekal",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1527,6 +1601,7 @@
         "city": "Kochi",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1542,6 +1617,7 @@
         "city": "Kochi",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1557,6 +1633,7 @@
         "city": "Kochi",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1572,6 +1649,7 @@
         "city": "Kochi",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1587,6 +1665,7 @@
         "city": "Kochi Airport",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Budget Hotel",
+        "basis": "We stayed",
         "pros": [
             "3 min drive / 15 min walk from Kochi airport",
             "Hotel provides free cab for airport pickup/drop",
@@ -1609,6 +1688,7 @@
         "city": "Kochi Airport",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel",
+        "basis": "Recommended",
         "pros": [
             "Bang opposite to Kochi Airport",
             "Its a Taj :)",
@@ -1626,6 +1706,7 @@
         "city": "Kochi Airport",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel",
+        "basis": "Recommended",
         "pros": [
             "Its a Marriott group property",
             "4 min drive / 15 min walk from airport",
@@ -1645,6 +1726,7 @@
         "city": "Kochi Airport",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "3* Hotel",
+        "basis": "Recommended",
         "pros": [
             "Neat and clean apartment",
             "3 km from Kochi airport",
@@ -1662,6 +1744,7 @@
         "city": "Kumarakom",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Resort",
+        "basis": "We stayed",
         "pros": [
             "Amazing property with beautiful rooms and lots of open spaces",
             "Bird santuary is within premises",
@@ -1680,6 +1763,7 @@
         "city": "Kumarakom",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Resort",
+        "basis": "Recommended",
         "pros": [
             "Its a Taj :)",
             "Amazing property in walkable distance to Bird Sanctuary",
@@ -1697,6 +1781,7 @@
         "city": "Munnar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "3* Farm Resort",
+        "basis": "We stayed",
         "pros": [
             "Very Neat and clean resort",
             "Farm resort with few pet animals, and lots of plantations and greenery",
@@ -1723,6 +1808,7 @@
         "city": "Munnar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Resort",
+        "basis": "We stayed",
         "pros": [
             "Its a Taj group property :)",
             "Very beautiful and scenic",
@@ -1743,6 +1829,7 @@
         "city": "Munnar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Beautiful property with breathtaking views",
             "Jacuzzi pool",
@@ -1761,6 +1848,7 @@
         "city": "Munnar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Located in main Munnar city"
         ],
@@ -1776,6 +1864,7 @@
         "city": "Munnar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1791,6 +1880,7 @@
         "city": "Munnar",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1806,6 +1896,7 @@
         "city": "Thekkady",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Budget Hotel",
+        "basis": "We stayed",
         "pros": [
             "Small and clean property with lots of greenery",
             "Tasty food from their in-house restaurant",
@@ -1828,6 +1919,7 @@
         "city": "Thekkady",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1843,6 +1935,7 @@
         "city": "Thekkady",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1858,6 +1951,7 @@
         "city": "Thekkady",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1873,6 +1967,7 @@
         "city": "Thekkady",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1888,6 +1983,7 @@
         "city": "Shillong",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hostel",
+        "basis": "Recommended",
         "pros": [
             "We have a stay coming up here soon :)"
         ],
@@ -1903,6 +1999,7 @@
         "city": "Shillong",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1918,6 +2015,7 @@
         "city": "Shillong",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1933,6 +2031,7 @@
         "city": "Shillong",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -1948,6 +2047,7 @@
         "city": "Innsbruck",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Apartment",
+        "basis": "We stayed",
         "pros": [
             "Beautiful property, very clean & safe neighborhood",
             "2-3 minutes walk from bus stand",
@@ -1967,6 +2067,7 @@
         "city": "Paris",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Airbnb",
+        "basis": "Friends stayed",
         "pros": [
             "View of Eiffel Tower",
             "Complimentary welcome basket",
@@ -1987,6 +2088,7 @@
         "city": "Paris (near Disneyland)",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Airbnb",
+        "basis": "We stayed",
         "pros": [
             "Direct bus to Disneyland (~25 min drive)",
             "Nice property, very clean & safe neighborhood",
@@ -2010,6 +2112,7 @@
         "city": "Freiburg im Breisgau",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Apartment",
+        "basis": "We stayed",
         "pros": [
             "Across the road to Tram Station",
             "5 - 10 minutes walk to major shopping area and tourist attractions",
@@ -2031,6 +2134,7 @@
         "city": "Freiburg im Breisgau",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2046,6 +2150,7 @@
         "city": "Freiburg im Breisgau",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2061,6 +2166,7 @@
         "city": "Genova",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Apartment",
+        "basis": "We stayed",
         "pros": [
             "Beautiful house, very clean & safe neighborhood",
             "Equipped kitchen",
@@ -2078,6 +2184,7 @@
         "city": "Interlaken",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Beautiful views, very clean & safe neighborhood",
             "2-3 minutes walk to bus stand",
@@ -2101,6 +2208,7 @@
         "city": "Kuala Lumpur",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Walkable to Monorail station",
             "Near to shopping hubs",
@@ -2120,6 +2228,7 @@
         "city": "Langkawi",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "We stayed",
         "pros": [
             "Beautiful property, very clean & safe neighborhood",
             "Has private beach access",
@@ -2141,6 +2250,7 @@
         "city": "Langkawi",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Resort",
+        "basis": "Friends stayed",
         "pros": [
             "Free stay for children aged upto 11 years",
             "Beautiful property, very clean & safe neighborhood",
@@ -2165,6 +2275,7 @@
         "city": "Singapore",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2180,6 +2291,7 @@
         "city": "Singapore",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2195,6 +2307,7 @@
         "city": "Singapore",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2210,6 +2323,7 @@
         "city": "Singapore",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2225,6 +2339,7 @@
         "city": "Singapore City Center",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Big rooms",
             "Very clean property",
@@ -2247,6 +2362,7 @@
         "city": "Singapore \u2013 Geylang",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Very budget friendly",
             "Clean property with simple rooms",
@@ -2267,6 +2383,7 @@
         "city": "Singapore \u2013 Havelock",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Friends stayed",
         "pros": [
             "Family Friendly and large hotel",
             "Has multiple type of rooms to suit different group sizes",
@@ -2288,6 +2405,7 @@
         "city": "Singapore \u2013 Lavender",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Budget Friendly",
             "Large property with swimming pool",
@@ -2306,6 +2424,7 @@
         "city": "Singapore \u2013 Lavender/Bugis",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Favorite of Indian Tour Agents",
             "Budget Friendly",
@@ -2330,6 +2449,7 @@
         "city": "Singapore \u2013 Little India",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Variety of Indian food options in breakfast",
             "Family friendly hotel",
@@ -2352,6 +2472,7 @@
         "city": "Singapore \u2013 Little India",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Marriott property",
             "4 - 5 minutes from Ferrer MRT station",
@@ -2374,6 +2495,7 @@
         "city": "Singapore \u2013 Novena",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Marriott property",
             "Family friendly and large hotel with 2 wings",
@@ -2403,6 +2525,7 @@
         "city": "Singapore \u2013 Orchard Road",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Friends stayed",
         "pros": [
             "Spacious and modern rooms",
             "Large options of breakfast including Indian food",
@@ -2421,6 +2544,7 @@
         "city": "Singapore \u2013 Orchard Road",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "We had booked this hotel initially but later changed due to room size",
             "Award winning hotel",
@@ -2451,6 +2575,7 @@
         "city": "Singapore \u2013 Orchard Road",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Free breakfast",
             "Family friendly hotel",
@@ -2471,6 +2596,7 @@
         "city": "Singapore \u2013 Robertson Quay",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Instagram worthy hotel",
             "Award winning hotel",
@@ -2493,6 +2619,7 @@
         "city": "Singapore \u2013 Robertson Quay",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Instagram worthy hotel",
             "Very beatiful lobby and hotel sitauted near riverside",
@@ -2514,6 +2641,7 @@
         "city": "Singapore \u2013 Serangoon",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Modern Clean rooms",
             "Very near to Mustafa Center and Little India MRT",
@@ -2536,6 +2664,7 @@
         "city": "Bangkok \u2013 Huey Kwang",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Neat and clean 4* hotel",
             "Swimming Pool, Gym",
@@ -2556,6 +2685,7 @@
         "city": "Bangkok \u2013 Siam",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "We stayed",
         "pros": [
             "Small but neat and clean property",
             "Near to 7-11 store, fruit market and tourist attractions",
@@ -2573,6 +2703,7 @@
         "city": "Koh Samui",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "4* Hostel/Hotel",
+        "basis": "We stayed",
         "pros": [
             "Neat and clean beach (Chaweng beach)",
             "Amazing property with direct beach access, games, two swimming pools and lots of happening activities",
@@ -2596,6 +2727,7 @@
         "city": "Koh Samui",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2611,6 +2743,7 @@
         "city": "Koh Samui",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2626,6 +2759,7 @@
         "city": "Pattaya",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "4* Hotel",
+        "basis": "We stayed",
         "pros": [
             "Centrally located with close access to most of the things",
             "Walkable to mall (Terminal-21), beach, marts, museums etc",
@@ -2644,6 +2778,7 @@
         "city": "Pattaya",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Luxury Stay",
+        "basis": "Shortlisted (not reviewed)",
         "pros": [
             "Alternative option listed on the site, no review yet"
         ],
@@ -2659,6 +2794,7 @@
         "city": "Phuket",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "5* Hotel",
+        "basis": "We stayed",
         "pros": [
             "Amazing property in close proximity to all happening places",
             "Amazing buffet breakfast with lots of options for Indian vegetarians (Poha, Paratha, Puri, Upma, Idli etc)",
@@ -2680,6 +2816,7 @@
         "city": "Dubai",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Studio Apartments",
+        "basis": "Recommended",
         "pros": [
             "Studio Apartments with kitchen cutlery, microwave, stove and fridge",
             "Swimming Pool",
@@ -2702,6 +2839,7 @@
         "city": "Dubai",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
         "badge": "Hotel",
+        "basis": "Recommended",
         "pros": [
             "Beautiful property, large and comfortable beds",
             "Decent spread of buffet breakfast with Indian cuisine options",
@@ -2843,6 +2981,7 @@
                 h.name.toLowerCase().includes(query) || 
                 h.city.toLowerCase().includes(query) || 
                 h.badge.toLowerCase().includes(query) ||
+                h.basis.toLowerCase().includes(query) ||
                 h.pros.some(p => p.toLowerCase().includes(query)) ||
                 h.cons.some(c => c.toLowerCase().includes(query))
             );
@@ -2866,6 +3005,12 @@
         list.forEach(hotel => {
             let prosHtml = hotel.pros.map(p => `<li>${p}</li>`).join('');
             let consHtml = hotel.cons.map(c => `<li>${c}</li>`).join('');
+            
+            // Check if basis/stay verification note exists
+            let basisHtml = "";
+            if (hotel.basis && hotel.basis.toLowerCase() !== 'nan' && hotel.basis.trim() !== '') {
+                basisHtml = `<div class="stay-verification">✨ ${hotel.basis}</div>`;
+            }
 
             html += `
                 <div class="hotel-card">
@@ -2876,6 +3021,8 @@
                         <h3>${hotel.name}</h3>
                         <div class="card-location">📍 ${hotel.city}, ${hotel.region}</div>
                         
+                        ${basisHtml}
+
                         <div class="pros-cons-container">
                             <div class="pros-section">
                                 <div class="section-title pros-title">Why We Love It</div>

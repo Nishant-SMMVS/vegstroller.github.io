@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VegStroller | Global Portfolio</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+    :root {
+        --charcoal: #121212;
+        --gold: #D4AF37;
+        --cream: #FAF9F6;
+        --text-dark: #2C2C2C;
+        --text-light: #7A7A7A;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        background-color: var(--cream);
+        color: var(--text-dark);
+    }
+
+    h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 400; color: var(--charcoal); margin: 0; }
+
+    /* Header */
+    header {
+        background-color: var(--charcoal);
+        padding: 25px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo a { font-family: 'Cinzel', serif; font-size: 24px; letter-spacing: 4px; color: #fff; font-weight: 600; text-decoration: none; }
+    nav a { text-decoration: none; color: #fff; margin-left: 40px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
+    nav a:hover { color: var(--gold); }
+
+    /* Page Header */
+    .page-header { text-align: center; padding: 60px 20px 30px; }
+    .page-header h1 { font-size: 42px; margin-bottom: 15px; }
+    .page-header p { color: var(--text-light); max-width: 600px; margin: 0 auto; }
+
+    /* Navigation Breadcrumbs (e.g., India > Maharashtra) */
+    .breadcrumbs {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        color: var(--text-light);
+        display: none; /* Hidden on initial load */
+    }
+    .breadcrumbs span { cursor: pointer; transition: color 0.3s; }
+    .breadcrumbs span:hover { color: var(--gold); }
+    .breadcrumbs .current { color: var(--charcoal); cursor: default; }
+
+    /* Main Container for Tiles & Hotels */
+    .content-container {
+        max-width: 1200px;
+        margin: 0 auto 100px;
+        padding: 0 20px;
+    }
+
+    /* Drill-Down Tiles (Zones & Regions) */
+    .tile-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .nav-tile {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease;
+    }
+    .nav-tile::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.4); transition: background 0.4s ease;
+    }
+    .nav-tile:hover { transform: translateY(-10px); }
+    .nav-tile:hover::before { background: rgba(0,0,0,0.2); }
+    
+    .nav-tile h2 {
+        position: relative;
+        color: #fff;
+        font-size: 32px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-align: center;
+    }
+
+    /* Hotel Cards Grid */
+    .hotel-grid {
+        display: none; /* Hidden until a Region is clicked */
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .hotel-card {
+        background: #fff;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        display: flex;
+        flex-direction: column;
+    }
+    .card-img { height: 220px; background-size: cover; background-position: center; position: relative; }
+    .card-badge { position: absolute; top: 15px; right: 15px; background: var(--gold); color: #fff; padding: 4px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .card-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-content h3 { font-size: 22px; margin-bottom: 5px; }
+    .card-location { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 20px; }
+    
+    .card-pros { margin-bottom: 25px; flex-grow: 1; }
+    .card-pros ul { list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--text-dark); }
+    .card-pros ul li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+    .card-pros ul li::before { content: '✓'; color: var(--gold); position: absolute; left: 0; font-weight: bold; }
+
+    .btn-agoda { display: block; text-align: center; background: var(--charcoal); color: #fff; padding: 12px 20px; text-decoration: none; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; transition: background 0.3s; }
+    .btn-agoda:hover { background: var(--gold); color: var(--charcoal); }
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="index.html">VegStroller</a></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="stays.html" style="color: var(--gold);">Global Portfolio</a>
+    </nav>
+</header>
+
+<div class="page-header">
+    <h1 id="main-title">The Global Portfolio</h1>
+    <p id="main-subtitle">Select a destination to explore our curated luxury collection.</p>
+</div>
+
+<!-- Breadcrumbs (Hidden initially) -->
+<div id="breadcrumbs" class="breadcrumbs">
+    <span onclick="loadZones()">Global Portfolio</span> 
+    <span id="crumb-separator" style="display:none;"> > </span> 
+    <span id="crumb-zone" onclick="loadRegions(currentZone)" style="display:none;"></span>
+    <span id="crumb-separator-2" style="display:none;"> > </span> 
+    <span id="crumb-region" class="current" style="display:none;"></span>
+</div>
+
+<!-- Main Content Area (Tiles or Hotels will render here) -->
+<div class="content-container">
+    <div id="tile-grid" class="tile-grid"></div>
+    <div id="hotel-grid" class="hotel-grid"></div>
+</div>
+
+<script>
+    // =========================================================================
+    // THE MASTER DATABASE
+    // =========================================================================
+    
+    // 1. ZONES (The Top Level)
+    const zones = [
+        { name: "India", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800" },
+        { name: "Southeast Asia", image: "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=800" },
+        { name: "Europe", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800" },
+        { name: "Middle East", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800" }
+    ];
+
+    // 2. REGIONS (The Second Level)
+    const regions = [
+        { zone: "India", name: "Maharashtra", image: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=800" },
+        { zone: "India", name: "Kashmir", image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800" },
+        { zone: "India", name: "Meghalaya", image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800" },
+        { zone: "Southeast Asia", name: "Singapore", image: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?q=80&w=800" },
+        { zone: "Middle East", name: "UAE", image: "https://images.unsplash.com/photo-1582610116397-edb318620f90?q=80&w=800" }
+    ];
+
+    // 3. HOTELS (The Final Level)
+    const hotels = [
+        {
+            region: "Maharashtra",
+            city: "Mumbai",
+            name: "Taj Mahal Palace",
+            image: "https://images.unsplash.com/photo-1582719478250-c89d14c77345?q=80&w=800",
+            badge: "Iconic",
+            bullets: ["Legendary Jain and Pure-Veg dining", "World-class heritage tours for families", "Unmatched Gateway of India views"],
+            agodaLink: "#"
+        },
+        {
+            region: "Maharashtra",
+            city: "Pune",
+            name: "JW Marriott",
+            image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800",
+            badge: "Family Friendly",
+            bullets: ["Massive Sunday brunch with veg counters", "Excellent kids club and pool area", "Central location for city exploration"],
+            agodaLink: "#"
+        },
+        {
+            region: "Meghalaya",
+            city: "Shillong",
+            name: "Courtyard by Marriott",
+            image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800",
+            badge: "Top Pick",
+            bullets: ["Phenomenal pure-veg breakfast spread", "Heated indoor pool (perfect for kids)", "Modern, accessible family suites"],
+            agodaLink: "#"
+        }
+    ];
+
+    // =========================================================================
+    // THE ENGINE (Navigation Logic)
+    // =========================================================================
+    
+    let currentZone = "";
+    const tileGrid = document.getElementById('tile-grid');
+    const hotelGrid = document.getElementById('hotel-grid');
+    const breadcrumbs = document.getElementById('breadcrumbs');
+    const mainTitle = document.getElementById('main-title');
+
+    // Load Tier 1: Zones (India, Europe, etc.)
+    function loadZones() {
+        tileGrid.style.display = "grid";
+        hotelGrid.style.display = "none";
+        breadcrumbs.style.display = "none";
+        mainTitle.innerText = "The Global Portfolio";
+        
+        let html = "";
+        zones.forEach(zone => {
+            html += `<div class="nav-tile" style="background-image: url('${zone.image}')" onclick="loadRegions('${zone.name}')">
+                        <h2>${zone.name}</h2>
+                     </div>`;
+        });
+        tileGrid.innerHTML = html;
+    }
+
+    // Load Tier 2: Regions (Maharashtra, Kashmir, etc.)
+    function loadRegions(zoneName) {
+        currentZone = zoneName;
+        tileGrid.style.display = "grid";
+        hotelGrid.style.display = "none";
+        
+        // Update Breadcrumbs
+        breadcrumbs.style.display = "block";
+        document.getElementById('crumb-separator').style.display = "inline";
+        document.getElementById('crumb-zone').style.display = "inline";
+        document.getElementById('crumb-zone').innerText = zoneName;
+        document.getElementById('crumb-zone').className = "current";
+        document.getElementById('crumb-separator-2').style.display = "none";
+        document.getElementById('crumb-region').style.display = "none";
+        
+        mainTitle.innerText = `Destinations in ${zoneName}`;
+
+        let filteredRegions = regions.filter(r => r.zone === zoneName);
+        let html = "";
+        filteredRegions.forEach(region => {
+            html += `<div class="nav-tile" style="background-image: url('${region.image}')" onclick="loadHotels('${region.name}')">
+                        <h2>${region.name}</h2>
+                     </div>`;
+        });
+        tileGrid.innerHTML = html;
+    }
+
+    // Load Tier 3: Hotels
+    function loadHotels(regionName) {
+        tileGrid.style.display = "none";
+        hotelGrid.style.display = "grid";
+        
+        // Update Breadcrumbs
+        document.getElementById('crumb-zone').className = "";
+        document.getElementById('crumb-separator-2').style.display = "inline";
+        document.getElementById('crumb-region').style.display = "inline";
+        document.getElementById('crumb-region').innerText = regionName;
+        
+        mainTitle.innerText = `Luxury Stays in ${regionName}`;
+
+        let filteredHotels = hotels.filter(h => h.region === regionName);
+        let html = "";
+        
+        if (filteredHotels.length === 0) {
+            html = `<div style="grid-column: 1 / -1; text-align: center; padding: 50px; color: #7A7A7A;">Curated reviews for ${regionName} are coming soon.</div>`;
+        } else {
+            filteredHotels.forEach(hotel => {
+                let bulletsHtml = hotel.bullets.map(b => `<li>${b}</li>`).join('');
+                html += `
+                    <div class="hotel-card">
+                        <div class="card-img" style="background-image: url('${hotel.image}');">
+                            <div class="card-badge">${hotel.badge}</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>${hotel.name}</h3>
+                            <div class="card-location">📍 ${hotel.city}, ${hotel.region}</div>
+                            <div class="card-pros">
+                                <ul>${bulletsHtml}</ul>
+                            </div>
+                            <a href="${hotel.agodaLink}" class="btn-agoda" target="_blank">Check Prices on Agoda</a>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        hotelGrid.innerHTML = html;
+    }
+
+    // Initialize page
+    loadZones();
+
+</script>
+
+</body>
+</html>

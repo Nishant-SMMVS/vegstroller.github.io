@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Family Travel Blueprints | VegStroller</title>
+<meta name="description" content="Explore field-tested, day-by-day luxury family travel itineraries tailored for Indian vegetarians, featuring practical tips, hotel picks, and kids' activities.">
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=GNLgSvBqx6NIIdUXysCTrm7drCJlJJ-tAoKcODyhFtJUZaLiBuMHf69dJp2oevNHIGXOZFBlQ1-KZsyrTc67eqQ26yAkzL6j1mZH9F27CXtEZdqp8FFSZVQVR3xOwNFEdNIwEdBHHpBXzIuHs-opKnKRT7IYhSaoaMAypniwtMReKZIIEi8Q7eLljddVW7KCUrgettKTQBEe78AdJDj1-UVpXuFFPffHDUyvFAkvdGsyMU-229NPLsE_MeBDGe9t8ngVuaq6I9f0B2pmWqOkeu5Zu7STk5IEGdhyc41j3YMOl0WMoNQi37S9EZT9kMzRRP6i5256_Spq-Q0ixIu7EQ" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBME0ySm1NR1kwWkdObFlURTBPVFUzTURBd05qVmxabUkxWlRVd09ESmpPREEyTm1NMFlqazROMll6TVdSa05EVVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPWJsdWVwcmludHMtdjIuaHRtbCZvcGk9MTAzMTM1MDUwJmF1dGh1c2VyPTQ"/><style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+    :root {
+        --charcoal: #121212;
+        --gold: #D4AF37;
+        --cream: #FAF9F6;
+        --text-dark: #2C2C2C;
+        --text-light: #7A7A7A;
+        --border-color: #E0E0E0;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        background-color: var(--cream);
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Cinzel', serif; font-weight: 400; color: var(--charcoal); margin: 0; }
+
+    /* Header */
+    header {
+        background-color: var(--charcoal);
+        padding: 25px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .logo a { font-family: 'Cinzel', serif; font-size: 24px; letter-spacing: 4px; color: #fff; font-weight: 600; text-decoration: none; }
+    nav a { text-decoration: none; color: #fff; margin-left: 40px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
+    nav a:hover { color: var(--gold); }
+
+    /* Page Header */
+    .page-header { text-align: center; padding: 60px 20px 30px; }
+    .page-header h1 { font-size: 42px; margin-bottom: 15px; }
+    .page-header p { color: var(--text-light); max-width: 650px; margin: 0 auto; font-size: 16px; }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        color: var(--text-light);
+        display: none;
+    }
+    .breadcrumbs span { cursor: pointer; transition: color 0.3s; }
+    .breadcrumbs span:hover { color: var(--gold); }
+    .breadcrumbs .current { color: var(--charcoal); cursor: default; }
+
+    .content-container {
+        max-width: 1200px;
+        margin: 0 auto 100px;
+        padding: 0 20px;
+    }
+
+    /* Level 1: Category Tiles */
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .nav-tile {
+        height: 280px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: transform 0.4s ease;
+    }
+    .nav-tile::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.45); transition: background 0.4s ease;
+    }
+    .nav-tile:hover { transform: translateY(-8px); }
+    .nav-tile:hover::before { background: rgba(0,0,0,0.25); }
+    
+    .tile-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    .tile-content h2 {
+        color: #fff;
+        font-size: 28px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .guide-count {
+        color: var(--gold);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    /* Level 2: Article Cards */
+    .article-grid {
+        display: none;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 40px;
+    }
+    .article-card {
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
+        border-top: 3px solid var(--charcoal);
+        transition: transform 0.3s ease;
+    }
+    .article-card:hover { transform: translateY(-5px); }
+    .card-img {
+        height: 220px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .card-badge {
+        position: absolute; top: 15px; left: 15px; background: var(--gold); color: #fff; padding: 5px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .card-content {
+        padding: 30px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .read-time { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 12px; }
+    .card-content h3 { font-size: 22px; margin-bottom: 15px; line-height: 1.4; flex-grow: 1; }
+    
+    .btn-read {
+        display: block; text-align: center; background: #f4f4f4; color: var(--charcoal); padding: 14px 20px; text-decoration: none; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; transition: all 0.3s;
+    }
+    .btn-read:hover { background: var(--charcoal); color: var(--gold); }
+
+    @media (max-width: 768px) {
+        header { flex-direction: column; padding: 20px; text-align: center; }
+        nav a { margin: 10px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="index.html">VegStroller</a></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="stays.html">Luxury Stays</a>
+        <a href="blueprints.html" style="color: var(--gold);">Blueprints</a>
+    </nav>
+</header>
+
+<div class="page-header">
+    <h1 id="main-title">Travel Blueprints</h1>
+    <p id="main-subtitle">Field-tested, day-by-day luxury itineraries and planning guides designed for Indian vegetarian families.</p>
+</div>
+
+<div id="breadcrumbs" class="breadcrumbs">
+    <span onclick="loadCategories()">All Regions</span> 
+    <span id="crumb-separator" style="display:none;"> > </span> 
+    <span id="crumb-region" class="current" style="display:none;"></span>
+</div>
+
+<div class="content-container">
+    <div id="category-grid" class="category-grid"></div>
+    <div id="article-grid" class="article-grid"></div>
+</div>
+
+<script>
+    // 1. Define the Categories (Level 1)
+    const categories = [
+        { id: "singapore", name: "Singapore", image: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?q=80&w=800" },
+        { id: "thailand", name: "Thailand", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800" },
+        { id: "europe", name: "Europe", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800" },
+        { id: "india", name: "India", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800" },
+        { id: "hacks", name: "Travel Hacks", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800" }
+    ];
+
+    // 2. Define the Articles (Level 2)
+    const articles = [
+        { catId: "singapore", badge: "Itinerary", title: "The Ultimate Singapore Family Itinerary (2025 Edition)", time: "12 min read", link: "singapore-blueprint.html", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800" },
+        { catId: "thailand", badge: "Guide", title: "8 Simple Ways to Save Money on a Thailand Trip", time: "12 min read", link: "thailand-savings-blueprint.html", image: "https://images.unsplash.com/photo-1537956965359-7573183d1f57?q=80&w=800" },
+        { catId: "thailand", badge: "Destination", title: "Koh Samui: One of the Best Beaches in Thailand", time: "8 min read", link: "koh-samui-blueprint.html", image: "https://images.unsplash.com/photo-1536929966141-8669e4f35836?q=80&w=800" },
+        { catId: "thailand", badge: "Destination", title: "Phuket: Places to Visit for an Indian Vegetarian Family", time: "8 min read", link: "phuket-blueprint.html", image: "https://images.unsplash.com/photo-1589394815804-964ce0ff96c7?q=80&w=800" },
+        { catId: "thailand", badge: "Destination", title: "Pattaya: A City That Has Something for Everyone", time: "9 min read", link: "pattaya-blueprint.html", image: "https://images.unsplash.com/photo-1588693959648-52210d7a0ce7?q=80&w=800" },
+        { catId: "europe", badge: "Itinerary", title: "26-Day Europe Itinerary for Indian Families: From Paris to the Alps", time: "15 min read", link: "europe-26days-blueprint.html", image: "https://images.unsplash.com/photo-1471623320832-752e8bbf8413?q=80&w=800" },
+        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 1: Package Tour vs Self-Planned", time: "4 min read", link: "europe-ep1-blueprint.html", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800" },
+        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 2: How to Plan a Perfect Europe Trip", time: "6 min read", link: "europe-ep2-blueprint.html", image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800" },
+        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 3: 16 Smart Tips for Flight Bookings", time: "5 min read", link: "europe-ep3-blueprint.html", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800" },
+        { catId: "india", badge: "Itinerary", title: "The Ultimate Daman Family Itinerary: A Relaxing Long Weekend", time: "10 min read", link: "daman-blueprint.html", image: "https://images.unsplash.com/photo-1582719478250-c89d14c77345?q=80&w=800" },
+        { catId: "india", badge: "Destination", title: "Visit Harsil Valley in India to Get the Feel of Switzerland", time: "5 min read", link: "harsil-valley-blueprint.html", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800" },
+        { catId: "hacks", badge: "Guide", title: "Things to Do Before Your International Trip", time: "7 min read", link: "international-prep-blueprint.html", image: "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80&w=800" }
+    ];
+
+    const categoryGrid = document.getElementById('category-grid');
+    const articleGrid = document.getElementById('article-grid');
+    const breadcrumbs = document.getElementById('breadcrumbs');
+    const mainTitle = document.getElementById('main-title');
+
+    function loadCategories() {
+        categoryGrid.style.display = "grid";
+        articleGrid.style.display = "none";
+        breadcrumbs.style.display = "none";
+        mainTitle.innerText = "Travel Blueprints";
+        
+        let html = "";
+        categories.forEach(cat => {
+            // Dynamically count the number of articles for this category
+            let count = articles.filter(a => a.catId === cat.id).length;
+            let label = count === 1 ? "Guide" : "Guides";
+            
+            html += `<div class="nav-tile" style="background-image: url('${cat.image}')" onclick="loadArticles('${cat.id}', '${cat.name}')">
+                        <div class="tile-content">
+                            <h2>${cat.name}</h2>
+                            <p class="guide-count">${count} ${label}</p>
+                        </div>
+                     </div>`;
+        });
+        categoryGrid.innerHTML = html;
+    }
+
+    function loadArticles(catId, catName) {
+        categoryGrid.style.display = "none";
+        articleGrid.style.display = "grid";
+        
+        breadcrumbs.style.display = "block";
+        document.getElementById('crumb-separator').style.display = "inline";
+        document.getElementById('crumb-region').style.display = "inline";
+        document.getElementById('crumb-region').innerText = catName;
+        
+        mainTitle.innerText = `${catName} Blueprints`;
+
+        let filteredArticles = articles.filter(a => a.catId === catId);
+        let html = "";
+        
+        if (filteredArticles.length === 0) {
+            html = `<p style="text-align:center; grid-column:1/-1; padding: 40px; color: #777;">New blueprints arriving soon.</p>`;
+        } else {
+            filteredArticles.forEach(article => {
+                html += `
+                    <div class="article-card">
+                        <div class="card-img" style="background-image: url('${article.image}');">
+                            <div class="card-badge">${article.badge}</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="read-time">⏳ ${article.time}</div>
+                            <h3>${article.title}</h3>
+                            <a href="${article.link}" class="btn-read">Read Blueprint</a>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        articleGrid.innerHTML = html;
+    }
+
+    // Initialize on load
+    loadCategories();
+</script>
+
+</body>
+</html>

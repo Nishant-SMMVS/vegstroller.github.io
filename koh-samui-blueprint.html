@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koh Samui - one of the best beaches in Thailand (Jan 2020) | VegStroller</title>
 <meta name="description" content="A complete day-wise guide for Indian families visiting Singapore with kids and vegetarians. Practical tips, itineraries, and hotel recommendations.">
-<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=U-uXhM-TjY-zm0fAC1WQDR-C_xtu43Vy6QQ554MhJxe0rkGV9LVliuO6LQYfxOUbLsNU4qXkErsFA2EfP8mc80arwOCiplqUpDW4ycwznkcW_MyekG0MaG1y5iTSW_DYFu6b64cOxZRt24SCH3jJYp5UL_tNO7V2-H9u-orzdJLM2U5eZja7GJ6OOrZHXBlQej_1nZ3MXZFcNjVgGOOcQuEFgt9G9ABTyBb3GUP7vU5euWNWYyyiLkLnCkC780TwqBm6pSkk5HC1z4YqpJXbljnR3RQH9yea6Ys6SxkvodCAHikcwjLlhKrZUn9JQ2CGuQ-JEEhcxYQhPLlHML2vn6skrZLh3MTmm9AQMKSfl-M" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBME9EWXpZVEZtWXpjelkyVXpPV1UwTURBd05qVm1NVEU1WVRWaE1qRmhPVEF6TnpBMFlXUTFZbUl3T1RSaU5UVVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPWtvaC1zYW11aS1ibHVlcHJpbnQtdjMuaHRtbCZvcGk9MTAzMTM1MDUwJmF1dGh1c2VyPTQ"/><style>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=YyarzrA5qb2gOyXNVaWJbs7EvCJHqQQuRcaKk-NlMYqLj6sUuu9eZ2MlWLIrQECiFRpZeMXR-BYtLuITmVd-HzHPxSENQgx3352kYALZSUa740vUlShUa4sYgHwgDHnBax0ygI3ucPSgHOb6MFDFqxSL6Vx74EtGxhEnhd0vQt4xMFEz1OsmhSKec-tsOnJWKmOhF444yMr7Jd97d6vAPPBxLifmfpDLOEZXvdJJcJNyNOQsem9pbaHOE_xugJYuEw64UL3-n5dvGnPKcxPDZYq-LzyKxnFf-I39llzuEQKHIny8RK5FUFdIxwL2DbEj-2thnafjYiMF6rU6iOmjltgKvlsu08YnfkN8RiD4aRI" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pCbE1XTTROREF6T1dJNU5EYzBOMk5pTURBd05qVm1NVEl3TmpRd1pUUTNZakF6TnpBMU9UTTVPVEl5WVdOa01EWVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPWtvaC1zYW11aS1ibHVlcHJpbnQtdjUuaHRtbCZvcGk9MTAzMTM1MDUwJmF1dGh1c2VyPTQ"/><style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
 
     :root {
@@ -212,6 +212,33 @@
     html {
         scroll-behavior: smooth;
     }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        background-color: var(--charcoal);
+        color: white;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        transition: background-color 0.3s, transform 0.3s;
+        line-height: 0;
+        padding-bottom: 4px;
+    }
+    #scrollTopBtn:hover {
+        background-color: var(--gold);
+        color: var(--charcoal);
+        transform: translateY(-3px);
+    }
 </style>
 </head>
 <body>
@@ -220,8 +247,8 @@
     <div class="logo"><a href="index.html">VegStroller</a></div>
     <nav>
         <a href="index.html">Home</a>
-        <a href="stays.html">Luxury Stays</a>
         <a href="blueprints.html" style="color: var(--gold);">Blueprints</a>
+        <a href="stays.html">Luxury Stays</a>
     </nav>
 </header>
 
@@ -280,18 +307,33 @@
 <p>Another must-try in Koh Samui is Mr. Tee Ice-cream rolls. This is a must-try for everyone. You will find it in many places and will cost 100 THB for 2 flavored ice cream.</p>
 <h2 id="section-7">Conclusion</h2>
 <p>If you are looking for an offbeat destination that is not too commercial but has beautiful beaches and lots of things to do, head to these islands. Reaching here is time-consuming but truly worth the effort. </p>
-<h5>Liked this article? Join my <em><a href="https://chat.whatsapp.com/LJR2jmK9ANK2Em1kTInGpS">Whatsapp</a></em> group to be part of our community! </h5>
-<h5>Feel free to share this article by clicking on the below icons...</h5>
-
     </div>
 <div class="cta-banner">
-            <h3>Explore Our Curated Thailand Stays</h3>
-            <p>Looking for the best family-friendly, pure-veg accessible hotels in Thailand like Ramada Phuket or Lub D? Browse our verified luxury portfolio.</p>
-            <a href="stays.html" class="btn-gold">View Thailand Stays</a>
+            <h3>Explore More</h3>
+            <p>Looking for the best family-friendly, pure-veg accessible hotels in Thailand? Or want to explore other destinations?</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <a href="stays.html" class="btn-gold">View Thailand Stays</a>
+                <a href="blueprints.html" class="btn-gold" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">Back to Blueprints</a>
+            </div>
         </div>
 
     </div>
 </div>
 
+
+<!-- Scroll to Top Button -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scrollTopBtn" title="Go to top">&#8593;</button>
+
+<script>
+    var mybutton = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+</script>
 </body>
+
 </html>

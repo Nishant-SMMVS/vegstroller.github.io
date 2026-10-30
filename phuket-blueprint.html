@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phuket - Places to visit for Indian vegetarian family with kids | VegStroller</title>
 <meta name="description" content="A complete day-wise guide for Indian families visiting Singapore with kids and vegetarians. Practical tips, itineraries, and hotel recommendations.">
-<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=cWm5Mevq9Dya9v6aV9KrY1izED57bVKhKPyTTyrI86bAklReZ5xMKbWVAaJgXHb5NgEZx0IlqOpxWtWGoq2tHj-rxhncWRMrOVi0OxYu7cTuC4xxsKbZHiVVTGBc7cRMVsx39DvCaZNxkXWXP1PzDhqiAZ2D-3eclahesmg8gkURVQ8IsdIT9SmLKgsvApkosjJEN1e1kBjQWVK-a27LZlkym0SplT2z1mo_R4hkS54wbMI9Dr34JQ_1YmlZmKz9GfhBkuCcE0umR3e5PyQvoKSyF8rXk5qiBJHgkRMRFk4X7xp-Y_spgO7OePeJWLHyMIwGOjcj8WMLCNEo6w-yDqfdamZmtOEEEYlhdfwdCyU" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pCaVlXVTVOREkyTnpReU4yTTBPV0l3TURBd05qVm1NVEU1WVRWaE1XUTBPREF6TnpBMFlXUTFZbUl3T1RSaU5UVVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPXBodWtldC1ibHVlcHJpbnQtdjMuaHRtbCZvcGk9MTAzMTM1MDUwJmF1dGh1c2VyPTQ"/><style>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_ytssHBApuVnLThGuSFh9mP0rP0tFAOgwXTgYcYLj7zJl4uJUSSPB8ODU4HPWEzDFTEU6aKhKp1tUNZQB7_TKYWVvFjsgYGUf7coHyN9QduRo4NCyHib0DtbC5rpw9eFrhbTV7ARjFfpT_7yU1gILhjDFOSdY302OrO42dY1zizFJjlR9lHeN4OXWfiMjZzdjo5B4V7DeVtCGNbGCqcaDHPc_QL4v9prfWbHxxG-M9QIboWCoGnnX04Yk14EdNSe25XkUmXq7aMUJX7yzCadReJdueI1QnBw_cKY-WCorJNs5OYYEHLne_Ok-cV5yOgM2IpFfVLUYSrMoBqoM0Wj78FVGJUaphE22CefHUSp0a0" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBNFpEWXpObU0yWkRjd09HRmtaamMxTURBd05qVm1NVEl3TmpReFlqTmhNREF6TnpBMU9UTTVPVEl5WVdOa01EWVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPXBodWtldC1ibHVlcHJpbnQtdjUuaHRtbCZvcGk9MTAzMTM1MDUwJmF1dGh1c2VyPTQ"/><style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
 
     :root {
@@ -212,6 +212,33 @@
     html {
         scroll-behavior: smooth;
     }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        background-color: var(--charcoal);
+        color: white;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        transition: background-color 0.3s, transform 0.3s;
+        line-height: 0;
+        padding-bottom: 4px;
+    }
+    #scrollTopBtn:hover {
+        background-color: var(--gold);
+        color: var(--charcoal);
+        transform: translateY(-3px);
+    }
 </style>
 </head>
 <body>
@@ -220,8 +247,8 @@
     <div class="logo"><a href="index.html">VegStroller</a></div>
     <nav>
         <a href="index.html">Home</a>
-        <a href="stays.html">Luxury Stays</a>
         <a href="blueprints.html" style="color: var(--gold);">Blueprints</a>
+        <a href="stays.html">Luxury Stays</a>
     </nav>
 </header>
 
@@ -278,18 +305,33 @@ and Ramada but average in Kohinoor.</p>
 <p>Looking back now that I have completed my trip, I could have planned Phuket better. I lost one full day going to Koh Samui and 1000 Baht visiting 3D museum. Had I known that there is another 3D museum walkable from my Pattaya hotel, I would have utilized my time in Phuket better. </p>
 <p>Another thing I realized is that Phuket was the costliest among all 3 cities. Since sight-seeing options are spread, you lose money on travel (unlike Pattaya, there are no 10 Baht tuktuks in Phuket). Average food expenses (Indian vegetarian food for 4 adults plus 3 kids) were 1000 - 1200 Baht in Phuket as compared to 800 - 1000 Baht in Pattaya / Koh Samui. </p>
 <p>You can say that Phuket is like Goa of India (with Patong similar to Calangute beach albeit a bit cleaner). Just because it is popular, people visit it. However, there are many other beautiful beaches and islands in Thailand and you can skip Phuket if you have other beaches on your itinerary. </p>
-<h5>Liked this article? Join my <em><a href="https://chat.whatsapp.com/LJR2jmK9ANK2Em1kTInGpS">Whatsapp</a></em> group to be part of our community! </h5>
-<h5>Feel free to share this article by clicking on the below icons...</h5>
-
     </div>
 <div class="cta-banner">
-            <h3>Explore Our Curated Thailand Stays</h3>
-            <p>Looking for the best family-friendly, pure-veg accessible hotels in Thailand like Ramada Phuket or Lub D? Browse our verified luxury portfolio.</p>
-            <a href="stays.html" class="btn-gold">View Thailand Stays</a>
+            <h3>Explore More</h3>
+            <p>Looking for the best family-friendly, pure-veg accessible hotels in Thailand? Or want to explore other destinations?</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <a href="stays.html" class="btn-gold">View Thailand Stays</a>
+                <a href="blueprints.html" class="btn-gold" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">Back to Blueprints</a>
+            </div>
         </div>
 
     </div>
 </div>
 
+
+<!-- Scroll to Top Button -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scrollTopBtn" title="Go to top">&#8593;</button>
+
+<script>
+    var mybutton = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+</script>
 </body>
+
 </html>

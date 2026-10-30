@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pattaya - A city which has something for everyone | VegStroller</title>
 <meta name="description" content="A complete day-wise guide for Indian families visiting Singapore with kids and vegetarians. Practical tips, itineraries, and hotel recommendations.">
-<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=TGrl1VzzT8j4wkXVbQ9MGmUpZ9XV_6CkJHrVWtChuHDkkz_ZDN2H_oNE-BG24snjG4bsm6-6BePFIafNFslUsT_yzvUeyyeTMRGOzhenRmsS4-uyMp4D7xZCQoeX6GISbgFzbmXfA0mw8yPFUnVnqPRVBkZDrVYQi3U0wyma7PVG4f49fjZLDjP1GAOLuZDCdOzB46Op0LlBKaH_hmOqYYLb_xrq0756stF82k9pltpn9r6Skh5Pe9VDQHf3boXKQ3ophYsuSdVkALSlpKXddCqNoB7Mgs7h3Cq5H-z9SF6tMD9uHM0ieDMXposziJ_PSzpcK1wqeL9kRB8oZosLF3eBphwXcISNSntGQV0tnY4" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBelpXWTNOV1F4TXprMk1EWXlORE01TURBd05qVm1NVEU1WVRWaE1qUXdNekF6TnpBMFlXUTFZbUl3T1RSaU5UVVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPXBhdHRheWEtYmx1ZXByaW50LXYzLmh0bWwmb3BpPTEwMzEzNTA1MCZhdXRodXNlcj00"/><style>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=lf1wsnzV-4I3yrGfLG_EJGFiVDbXxpFT_XrUkcOL82utxZB3EoSjw1YZNfxXFDHgrdfX1cFpmDlMkOTYBMiX8HXssBCXdHX63i9Hd-KM7c6IZDSOsMq74iQI2np0A3f3cuxZ0HgnJRqkdW0P-wcqfiK7aYOcIKix8b6U4n809jBOyagtlpdqR1j40rNfYLEANDYLvwcqNMy03xTwdtsdp1iJtAjPduj6iUIZcqz21U4qv6mAIlm3s42Oy-Ha_CS-L8LtiXPQ8b0Lk6zPkJHWsi_ibOeYX2n_nYIpRZa6PNkFykvbyaGDayC_pEopFGSxsmkW2MFmB21pwl7wgpqIPQMrSb949-IMK6iX9jo2x18" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBMU5Ua3pNR0l4WkRRME4ySTRabUkyTURBd05qVm1NVEl3TmpRd1pHTXpPREF6TnpBMU9UTTVPVEl5WVdOa01EWVNDeElIRUwyUHI0YUxIQmdCJmZpbGVuYW1lPXBhdHRheWEtYmx1ZXByaW50LXY1Lmh0bWwmb3BpPTEwMzEzNTA1MCZhdXRodXNlcj00"/><style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
 
     :root {
@@ -212,6 +212,33 @@
     html {
         scroll-behavior: smooth;
     }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        background-color: var(--charcoal);
+        color: white;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        transition: background-color 0.3s, transform 0.3s;
+        line-height: 0;
+        padding-bottom: 4px;
+    }
+    #scrollTopBtn:hover {
+        background-color: var(--gold);
+        color: var(--charcoal);
+        transform: translateY(-3px);
+    }
 </style>
 </head>
 <body>
@@ -220,8 +247,8 @@
     <div class="logo"><a href="index.html">VegStroller</a></div>
     <nav>
         <a href="index.html">Home</a>
-        <a href="stays.html">Luxury Stays</a>
         <a href="blueprints.html" style="color: var(--gold);">Blueprints</a>
+        <a href="stays.html">Luxury Stays</a>
     </nav>
 </header>
 
@@ -242,16 +269,7 @@
 <li><a href="#section-2">Where to stay</a></li>
 <li><a href="#section-3">Hotel Review</a></li>
 <li><a href="#section-4">Local commute</a></li>
-<li><a href="#section-5">What we did in Pattaya</a>
-<ul class="toc-nested">
-<li><a href="#section-6">Coral Island Tour</a></li>
-<li><a href="#section-7">Dolphin World</a></li>
-<li><a href="#section-8">Terminal 21 mall</a></li>
-<li><a href="#section-9">Walking Street</a></li>
-<li><a href="#section-10">Pattaya Night Bazaar</a></li>
-<li><a href="#section-11">Beach Road</a></li>
-<li><a href="#section-12">Bangsaray beach</a></li>
-</ul></li>
+<li><a href="#section-5">What we did in Pattaya</a></li>
 <li><a href="#section-13">Things we missed</a></li>
 <li><a href="#section-14">Food options</a></li>
 </ul>
@@ -306,18 +324,33 @@ reach the right venue for the show if booking tickets in advance)</p>
 <h2 id="section-14">Food options</h2>
 <p> The area near Ibis has several Indian restaurants. We ate in Panchvat, Rajdhani, Crown of India and Govindam restaurants of which Panchvat and Crown of India were the best. The average bill for our group of 4 adults and 3 children was around 800 - 1000 Baht.</p>
 <p>Overall, we had a good time in Pattaya. And I hear that there are many more tourist attractions coming up in and around Pattaya. So it will be on our must-visit list next time we go to Thailand.</p>
-<h5>Liked this article? Join my <em><a href="https://chat.whatsapp.com/LJR2jmK9ANK2Em1kTInGpS">Whatsapp</a></em> group to be part of our community! </h5>
-<h5>Feel free to share this article by clicking on the below icons...</h5>
-
     </div>
 <div class="cta-banner">
-            <h3>Explore Our Curated Thailand Stays</h3>
-            <p>Looking for the best family-friendly, pure-veg accessible hotels in Thailand like Ramada Phuket or Lub D? Browse our verified luxury portfolio.</p>
-            <a href="stays.html" class="btn-gold">View Thailand Stays</a>
+            <h3>Explore More</h3>
+            <p>Looking for the best family-friendly, pure-veg accessible hotels in Thailand? Or want to explore other destinations?</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <a href="stays.html" class="btn-gold">View Thailand Stays</a>
+                <a href="blueprints.html" class="btn-gold" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);">Back to Blueprints</a>
+            </div>
         </div>
 
     </div>
 </div>
 
+
+<!-- Scroll to Top Button -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scrollTopBtn" title="Go to top">&#8593;</button>
+
+<script>
+    var mybutton = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+</script>
 </body>
+
 </html>

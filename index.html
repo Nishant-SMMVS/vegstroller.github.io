@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VegStroller | Luxury Family Travel & Pure-Veg Experiences</title>
+<title>VegStroller | Family-Friendly Luxury Stays, Kid-Friendly Itineraries, Pure-Veg Food</title>
+<meta name="description" content="Hand-picked 4 and 5-star family-friendly stays and day-by-day itineraries for Indian vegetarian families travelling with kids and grandparents.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap">
@@ -80,12 +81,16 @@
 
     .hero h1 {
         color: #fff;
-        font-size: 64px;
+        font-size: 52px;
         letter-spacing: 2px;
         margin-bottom: 20px;
         max-width: 900px;
         line-height: 1.2;
     }
+
+    .hero h1 span { display: block; }
+    .social-proof p.collab-label { font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px; }
+    .social-proof p:first-child { margin-bottom: 14px; color: var(--charcoal); }
 
     .hero p {
         color: #fff;
@@ -248,7 +253,9 @@
     @media (max-width: 768px) {
         header { flex-direction: column; background: var(--charcoal); padding: 20px; position: relative; }
         nav a { margin: 0 10px; }
-        .hero h1 { font-size: 40px; }
+        .hero h1 { font-size: 30px; }
+        .hero p { font-size: 13px; letter-spacing: 2px; }
+        nav a { white-space: nowrap; }
         .pillars { flex-direction: column; }
         .brand-logos { flex-direction: column; gap: 20px; }
         .email-capture input { width: 100%; margin-bottom: 10px; }
@@ -267,14 +274,14 @@
 </header>
 
 <div class="hero">
-    <h1>The Art of Pure-Vegetarian Luxury Travel</h1>
-    <p>Curated Experiences for the Modern Indian Family</p>
+    <h1><span>Family-friendly luxury stays.</span> <span>Kid-friendly itineraries.</span> <span>Pure-veg food.</span></h1>
+    <p>Hand-picked 4 and 5-star stays and day-by-day travel plans for Indian vegetarian families, grandparents welcome</p>
     <a href="#pillars" class="btn-primary">Explore Our Expertise</a>
 </div>
 
 <div class="philosophy">
-    <h2>Uncompromising Standards</h2>
-    <p>You shouldn't have to choose between a 5-star experience and your family's dietary values. At VegStroller, we take the guesswork out of multi-generational travel. We personally vet premium properties and curate slow-travel itineraries so you can focus on what matters most: making memories with your children and parents.</p>
+    <h2>Planned by a Family Like Yours</h2>
+    <p>Finding a luxury hotel is easy. Planning a trip that works for the whole family is not. Kids need space, a pool and days that aren't rushed. Grandparents, when they come along, need comfortable rooms and shorter walks. And everyone needs proper vegetarian food. So we do the planning for you: hand-picked stays that suit families, and detailed day-by-day itineraries paced for kids and seniors, with the vegetarian food we found at each stop. If it doesn't work for a family like ours, it doesn't make our list.</p>
 </div>
 
 <div id="pillars" class="pillars">
@@ -304,7 +311,8 @@
 </div>
 
 <div class="social-proof">
-    <p>OUR HOTEL COLLABORATIONS</p>
+    <p>FOLLOWED BY 12,000+ TRAVELLING FAMILIES</p>
+    <p class="collab-label">Our hotel collaborations</p>
     <div class="brand-logos">
         <span>TAJ DAL VIEW</span>
         <span>THE KHYBER</span>

@@ -122,6 +122,10 @@
     /* Philosophy / Why Us Section */
     .about-us { max-width: 1000px; margin: 20px auto 90px; padding: 0 20px; display: grid; grid-template-columns: 360px 1fr; gap: 56px; align-items: center; }
     .about-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .join-club .btn-primary + .btn-primary { margin-left: 12px; }
+    @media (max-width: 600px) { .join-club .btn-primary + .btn-primary { margin: 12px 0 0; } }
+    .about-caption { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin: 10px 0 0; }
+    .about-text a { color: #9a7b1c; }
     .about-text .about-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; color: #9a7b1c; margin: 0 0 10px; }
     .about-text h2 { font-size: 34px; margin: 0 0 20px; }
     .about-text p { font-size: 16px; color: #555; line-height: 1.8; margin: 0 0 16px; font-weight: 300; }
@@ -306,13 +310,14 @@
 
 <div class="about-us">
     <div class="about-photo">
-        <img src="images/home/family-sunset.jpg" alt="Nishant and family on one of their trips" width="720" height="900" loading="lazy" decoding="async">
+        <img src="images/home/nishant-paris.jpg" alt="Nishant at the top of the Eiffel Tower, Paris" width="720" height="900" loading="lazy" decoding="async">
+        <p class="about-caption">Me, at the top of the Eiffel Tower, Paris</p>
     </div>
     <div class="about-text">
         <p class="about-eyebrow">Who we are</p>
         <h2>Hi, we're Nishant and family</h2>
         <p>We're a Pune family of four: me, my wife and our two daughters. Our first big trip together was Thailand in January 2020, just before the world shut down. Since then I've written up every trip we take.</p>
-        <p>That's 26 days across Europe that I planned myself, a week in Ladakh, Singapore, Kashmir, and over 15 shorter trips, from Rishikesh and Goa to Munnar, Kumarakom, Udupi and Mahabaleshwar. I do all the planning, research and booking, and everything I learn ends up here and on our Instagram and YouTube.</p>
+        <p>That's 26 days across Europe that I planned myself, a week in Ladakh, Singapore, Kashmir, and over 15 shorter trips, from Rishikesh and Goa to Munnar, Kumarakom, Udupi and Mahabaleshwar. I do all the planning, research and booking, and everything I learn ends up here and on our <a href="https://www.instagram.com/vegstroller/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.youtube.com/@vegstroller" target="_blank" rel="noopener">YouTube</a>.</p>
         <p class="about-note">We're not a travel agency. We don't sell packages or take bookings. We just share what worked for our family, and what didn't.</p>
     </div>
 </div>
@@ -356,6 +361,7 @@
     <h2>Follow Our Trips</h2>
     <p>New itineraries, honest hotel notes and pure-veg finds, as we travel.</p>
     <a href="https://www.instagram.com/vegstroller/" class="btn-primary" target="_blank" rel="noopener">Follow on Instagram</a>
+    <a href="https://www.youtube.com/@vegstroller" class="btn-primary" target="_blank" rel="noopener">Watch on YouTube</a>
 </div>
 
 </body>

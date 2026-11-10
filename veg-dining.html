@@ -58,7 +58,8 @@
     .rating { text-align: right; white-space: nowrap; }
     .rating .num { font-family: 'Cinzel', serif; font-size: 22px; color: var(--charcoal); }
     .rating .lbl { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-light); font-weight: 700; }
-    .stars { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
+    .stars { position: relative; display: block; width: max-content; margin: 2px 0 0 auto; font-size: 13px; letter-spacing: 1px; color: #E3DCC6; line-height: 1; }
+    .stars .fill { position: absolute; top: 0; left: 0; overflow: hidden; white-space: nowrap; color: var(--gold); }
     .card-location { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); }
     .cuisine { font-size: 15px; color: var(--charcoal); font-weight: 700; }
     .format { font-size: 13px; color: var(--text-light); }
@@ -245,8 +246,9 @@ const countIn = (key, val) => restaurants.filter(r => r[key] === val).length;
 const plural = n => n + (n === 1 ? " restaurant" : " restaurants");
 
 function stars(r) {
-  const full = Math.floor(r), half = r - full >= 0.5 ? 1 : 0;
-  return "★".repeat(full) + (half ? "½" : "");
+  // Five stars, gold-filled to the exact rating (4.25 shows four and a quarter)
+  const pct = Math.max(0, Math.min(100, r / 5 * 100));
+  return `★★★★★<span class="fill" style="width:${pct}%">★★★★★</span>`;
 }
 function mapsUrl(r) {
   const multi = r.area === "Multiple outlets";
@@ -259,7 +261,7 @@ function cardHTML(r) {
   const who = r.visited ? `<span class="badge visited">We've eaten here</span>` : `<span class="badge list">On our list</span>`;
   const multi = r.area === "Multiple outlets";
   const rating = r.visited
-    ? `<div class="rating"><span class="num">${r.rating}</span><span class="stars">${stars(r.rating)}</span><span class="lbl">Our rating</span></div>`
+    ? `<div class="rating"><span class="num">${r.rating}</span><span class="stars" aria-label="${r.rating} out of 5">${stars(r.rating)}</span><span class="lbl">Our rating</span></div>`
     : "";
   return `
   <div class="dining-card${r.visited && r.rating >= 4.5 ? " top" : ""}">

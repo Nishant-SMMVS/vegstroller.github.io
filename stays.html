@@ -628,7 +628,7 @@
         "city": "Leh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
         "badge": "4* Hotel",
-        "basis": "Recommended",
+        "basis": "We stayed (2025)",
         "pros": [
             "Centralized heating making it a perfect hotel for cold season",
             "Beautiful, neat and clean 4* property",
@@ -654,7 +654,7 @@
         "city": "Leh",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
         "badge": "Hotel",
-        "basis": "Recommended",
+        "basis": "We stayed (2024)",
         "pros": [
             "Neat and clean property",
             "View of Himalayas from the room",
@@ -671,32 +671,6 @@
             "Opens only from May"
         ],
         "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=37825675"
-    },
-    {
-        "name": "Zostel",
-        "zone": "North India",
-        "region": "Ladakh",
-        "city": "Leh",
-        "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
-        "badge": "Hostel",
-        "basis": "Recommended",
-        "pros": [
-            "Perfect for solo travelers",
-            "Neat and clean property",
-            "Sharing/Non sharing rooms fitting every budget",
-            "Board games, books to relax",
-            "View of Himalayas from the rooftop cafeteria",
-            "Can meet like minded people / easily find people to form groups & explore Ladakh",
-            "In house restaurant and good food",
-            "Hot water geyser in each room",
-            "7-10 min walk to Leh market"
-        ],
-        "cons": [
-            "3 - 4 floors without lift and narrow stairs",
-            "Limited parking space for 2 wheelers on first come first serve basis",
-            "Opens only from May"
-        ],
-        "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=2577453"
     },
     {
         "name": "Sia-La Guest House",
@@ -766,9 +740,9 @@
         "city": "Pangong",
         "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
         "badge": "Homestay",
-        "basis": "Recommended",
+        "basis": "My wife stayed (2025)",
         "pros": [
-            "She found it the best of her Ladakh trip stays",
+            "My wife found it the best of her Ladakh trip stays",
             "Beautiful view of Pangong lake from rooms",
             "Warm hosts who take all care of your needs",
             "Neat and clean property",
@@ -1081,22 +1055,6 @@
         "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=59902055"
     },
     {
-        "name": "Zostel Plus",
-        "zone": "West India",
-        "region": "Maharashtra",
-        "city": "Lonavala",
-        "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
-        "badge": "Luxury Stay",
-        "basis": "Shortlisted (not reviewed)",
-        "pros": [
-            "Alternative option listed on the site, no review yet"
-        ],
-        "cons": [
-            "Standard peak season pricing applies"
-        ],
-        "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=31218448"
-    },
-    {
         "name": "Dellas Resort",
         "zone": "West India",
         "region": "Maharashtra",
@@ -1271,22 +1229,6 @@
             "Standard peak season pricing applies"
         ],
         "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=47074929"
-    },
-    {
-        "name": "Zostel Plus",
-        "zone": "West India",
-        "region": "Maharashtra",
-        "city": "Mahabaleshwar & Panchgani",
-        "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
-        "badge": "Luxury Stay",
-        "basis": "Shortlisted (not reviewed)",
-        "pros": [
-            "Alternative option listed on the site, no review yet"
-        ],
-        "cons": [
-            "Standard peak season pricing applies"
-        ],
-        "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=41487708"
     },
     {
         "name": "The Fern Residency",
@@ -2037,22 +1979,6 @@
             "Standard peak season pricing applies"
         ],
         "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=37987033"
-    },
-    {
-        "name": "Zostel",
-        "zone": "East India",
-        "region": "Meghalaya",
-        "city": "Shillong",
-        "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
-        "badge": "Hostel",
-        "basis": "Recommended",
-        "pros": [
-            "We have a stay coming up here soon :)"
-        ],
-        "cons": [
-            "Standard peak season pricing applies"
-        ],
-        "agodaLink": "https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1934193&hid=38547402"
     },
     {
         "name": "Courtyard",
@@ -3086,7 +3012,12 @@
 
     // Order within a city: places we stayed first, then visited, friends' stays, recommendations, shortlist
     const BASIS_ORDER = ["we stayed", "we stayed (collaboration)", "we visited (collaboration)", "friends stayed", "recommended", "shortlisted (not reviewed)"];
-    function basisRank(h) { const i = BASIS_ORDER.indexOf((h.basis || "").toLowerCase()); return i === -1 ? BASIS_ORDER.length : i; }
+    function basisRank(h) {
+        const b = (h.basis || "").toLowerCase();
+        if (b.startsWith("my wife stayed") || b.startsWith("family stayed")) return 1.5;
+        const i = BASIS_ORDER.findIndex(x => b === x || (x === "we stayed" && /^we stayed \(\d{4}\)$/.test(b)));
+        return i === -1 ? BASIS_ORDER.length : i;
+    }
 
     function renderHotelCards(list) {
         list = [...list].sort((a, b) => a.city.localeCompare(b.city) || basisRank(a) - basisRank(b));

@@ -211,27 +211,27 @@
 <script>
     // 1. Define the Categories (Level 1)
     const categories = [
-        { id: "singapore", name: "Singapore", image: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?q=80&w=800&auto=format" },
-        { id: "thailand", name: "Thailand", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800&auto=format" },
-        { id: "europe", name: "Europe", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800&auto=format" },
-        { id: "india", name: "India", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800&auto=format" },
-        { id: "hacks", name: "Travel Hacks", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format" }
+        { id: "singapore", name: "Singapore", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800&auto=format" },
+        { id: "thailand", name: "Thailand", image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=800&auto=format" },
+        { id: "europe", name: "Europe", image: "images/stays/switzerland-interlaken.jpg" },
+        { id: "india", name: "India", image: "images/blueprints/daman-sunset.jpg" },
+        { id: "hacks", name: "Travel Hacks", image: "images/blueprints/plane-window.jpg" }
     ];
 
     // 2. Define the Articles (Level 2)
     const articles = [
         { catId: "singapore", badge: "Itinerary", title: "The Ultimate Singapore Family Itinerary (2025 Edition)", time: "12 min read", link: "singapore-blueprint.html", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800&auto=format" },
-        { catId: "thailand", badge: "Guide", title: "8 Simple Ways to Save Money on a Thailand Trip", time: "12 min read", link: "thailand-savings-blueprint.html", image: "https://images.unsplash.com/photo-1537956965359-7573183d1f57?q=80&w=800&auto=format" },
-        { catId: "thailand", badge: "Destination", title: "Koh Samui: One of the Best Beaches in Thailand", time: "8 min read", link: "koh-samui-blueprint.html", image: "https://images.unsplash.com/photo-1536929966141-8669e4f35836?q=80&w=800&auto=format" },
-        { catId: "thailand", badge: "Destination", title: "Phuket: Places to Visit for an Indian Vegetarian Family", time: "8 min read", link: "phuket-blueprint.html", image: "https://images.unsplash.com/photo-1589394815804-964ce0ff96c7?q=80&w=800&auto=format" },
-        { catId: "thailand", badge: "Destination", title: "Pattaya: A City That Has Something for Everyone", time: "9 min read", link: "pattaya-blueprint.html", image: "https://images.unsplash.com/photo-1588693959648-52210d7a0ce7?q=80&w=800&auto=format" },
-        { catId: "europe", badge: "Itinerary", title: "26-Day Europe Itinerary for Indian Families: From Paris to the Alps", time: "15 min read", link: "europe-26days-blueprint.html", image: "https://images.unsplash.com/photo-1471623320832-752e8bbf8413?q=80&w=800&auto=format" },
-        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 1: Package Tour vs Self-Planned", time: "4 min read", link: "europe-ep1-blueprint.html", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=800&auto=format" },
-        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 2: How to Plan a Perfect Europe Trip", time: "6 min read", link: "europe-ep2-blueprint.html", image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format" },
-        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 3: 16 Smart Tips for Flight Bookings", time: "5 min read", link: "europe-ep3-blueprint.html", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format" },
-        { catId: "india", badge: "Itinerary", title: "The Ultimate Daman Family Itinerary: A Relaxing Long Weekend", time: "10 min read", link: "daman-blueprint.html", image: "https://images.unsplash.com/photo-1582719478250-c89d14c77345?q=80&w=800&auto=format" },
-        { catId: "india", badge: "Destination", title: "Visit Harsil Valley in India to Get the Feel of Switzerland", time: "5 min read", link: "harsil-valley-blueprint.html", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format" },
-        { catId: "hacks", badge: "Guide", title: "Things to Do Before Your International Trip", time: "7 min read", link: "international-prep-blueprint.html", image: "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80&w=800&auto=format" }
+        { catId: "thailand", badge: "Guide", title: "8 Simple Ways to Save Money on a Thailand Trip", time: "12 min read", link: "thailand-savings-blueprint.html", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800&auto=format" },
+        { catId: "thailand", badge: "Destination", title: "Koh Samui: One of the Best Beaches in Thailand", time: "8 min read", link: "koh-samui-blueprint.html", image: "https://images.unsplash.com/photo-1753008517455-4deaf8b51877?q=80&w=800&auto=format" },
+        { catId: "thailand", badge: "Destination", title: "Phuket: Places to Visit for an Indian Vegetarian Family", time: "8 min read", link: "phuket-blueprint.html", image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=800&auto=format" },
+        { catId: "thailand", badge: "Destination", title: "Pattaya: A City That Has Something for Everyone", time: "9 min read", link: "pattaya-blueprint.html", image: "https://images.unsplash.com/photo-1625793061481-8c36fdc131a4?q=80&w=800&auto=format" },
+        { catId: "europe", badge: "Itinerary", title: "26-Day Europe Itinerary for Indian Families: From Paris to the Alps", time: "15 min read", link: "europe-26days-blueprint.html", image: "images/stays/france-paris-seine.jpg" },
+        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 1: Package Tour vs Self-Planned", time: "4 min read", link: "europe-ep1-blueprint.html", image: "images/blueprints/black-forest.jpg" },
+        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 2: How to Plan a Perfect Europe Trip", time: "6 min read", link: "europe-ep2-blueprint.html", image: "images/stays/germany-triberg.jpg" },
+        { catId: "europe", badge: "Planning", title: "Europe Trip Planning, Ep 3: 16 Smart Tips for Flight Bookings", time: "5 min read", link: "europe-ep3-blueprint.html", image: "images/blueprints/plane-window.jpg" },
+        { catId: "india", badge: "Itinerary", title: "The Ultimate Daman Family Itinerary: A Relaxing Long Weekend", time: "10 min read", link: "daman-blueprint.html", image: "images/blueprints/daman-sunset.jpg" },
+        { catId: "india", badge: "Destination", title: "Visit Harsil Valley in India to Get the Feel of Switzerland", time: "5 min read", link: "harsil-valley-blueprint.html", image: "images/stays/uttarakhand-harsil.jpg" },
+        { catId: "hacks", badge: "Guide", title: "Things to Do Before Your International Trip", time: "7 min read", link: "international-prep-blueprint.html", image: "images/blueprints/alps-lake.jpg" }
     ];
 
     const categoryGrid = document.getElementById('category-grid');

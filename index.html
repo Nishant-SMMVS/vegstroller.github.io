@@ -120,6 +120,13 @@
     }
 
     /* Philosophy / Why Us Section */
+    .about-us { max-width: 1000px; margin: 20px auto 90px; padding: 0 20px; display: grid; grid-template-columns: 360px 1fr; gap: 56px; align-items: center; }
+    .about-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .about-text .about-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; color: #9a7b1c; margin: 0 0 10px; }
+    .about-text h2 { font-size: 34px; margin: 0 0 20px; }
+    .about-text p { font-size: 16px; color: #555; line-height: 1.8; margin: 0 0 16px; font-weight: 300; }
+    .about-text .about-note { border-left: 3px solid var(--gold); background: #F9F6EE; padding: 12px 16px; font-weight: 400; color: #444; font-size: 15px; }
+    @media (max-width: 768px) { .about-us { grid-template-columns: 1fr; gap: 28px; margin-bottom: 60px; } .about-photo { max-width: 340px; margin: 0 auto; } .about-text h2 { font-size: 26px; } }
     .philosophy {
         padding: 100px 20px;
         text-align: center;
@@ -284,16 +291,29 @@
 <div class="hero">
     <h1><span>Family-friendly luxury stays.</span> <span>Kid-friendly itineraries.</span> <span>Pure-veg food.</span></h1>
     <p>Hand-picked 4 and 5-star stays and day-by-day travel plans for Indian vegetarian families, grandparents welcome</p>
-    <a href="#pillars" class="btn-primary">Explore Our Expertise</a>
+    <a href="#pillars" class="btn-primary">See Where We've Been</a>
     <span class="hero-caption">Sunset at Daman, on one of our family trips</span>
 </div>
 
 <div class="philosophy">
     <h2>Planned by a Family Like Yours</h2>
-    <p>Finding a luxury hotel is easy. Planning a trip that works for the whole family is not. Kids need space, a pool and days that aren't rushed. Grandparents, when they come along, need comfortable rooms and shorter walks. And everyone needs proper vegetarian food. So we do the planning for you: hand-picked stays that suit families, and detailed day-by-day itineraries paced for kids and seniors, with the vegetarian food we found at each stop. If it doesn't work for a family like ours, it doesn't make our list.</p>
+    <p>Finding a luxury hotel is easy. Planning a trip that works for the whole family is not. Kids need space, a pool and days that aren't rushed. Grandparents, when they come along, need comfortable rooms and shorter walks. And everyone needs proper vegetarian food. So we write down everything we plan for our own trips: the stays that worked for our family, day-by-day itineraries paced for kids and seniors, and the vegetarian food we found at each stop. If it doesn't work for a family like ours, it doesn't make our list.</p>
     <div class="family-photos">
         <figure><img src="images/home/family-sunset.jpg" alt="Our family of four holding hands, watching the sunset at Taj Fountain Mahabaleshwar" width="720" height="900" loading="lazy" decoding="async"><figcaption>Sunset at Taj Fountain, Mahabaleshwar</figcaption></figure>
         <figure><img src="images/home/mahabaleshwar-forest-path.jpg" alt="A father walking a forest path with his two daughters in Mahabaleshwar" width="720" height="900" loading="lazy" decoding="async"><figcaption>Forest walk, Mahabaleshwar</figcaption></figure>
+    </div>
+</div>
+
+<div class="about-us">
+    <div class="about-photo">
+        <img src="images/home/family-sunset.jpg" alt="Nishant and family on one of their trips" width="720" height="900" loading="lazy" decoding="async">
+    </div>
+    <div class="about-text">
+        <p class="about-eyebrow">Who we are</p>
+        <h2>Hi, we're Nishant and family</h2>
+        <p>We're a Pune family of four: me, my wife and our two daughters. Our first big trip together was Thailand in January 2020, just before the world shut down. Since then I've written up every trip we take.</p>
+        <p>That's 26 days across Europe that I planned myself, a week in Ladakh, Singapore, Kashmir, and over 15 shorter trips, from Rishikesh and Goa to Munnar, Kumarakom, Udupi and Mahabaleshwar. I do all the planning, research and booking, and everything I learn ends up here and on our Instagram and YouTube.</p>
+        <p class="about-note">We're not a travel agency. We don't sell packages or take bookings. We just share what worked for our family, and what didn't.</p>
     </div>
 </div>
 
@@ -302,15 +322,15 @@
     <div class="pillar-card">
         <div class="pillar-icon">🗺️</div>
         <h3>Travel Blueprints</h3>
-        <p>Step-by-step, slow-travel itineraries perfectly paced for kids and seniors. Avoid the tourist traps and travel with our exact routes for Singapore, Thailand, Europe and India.</p>
+        <p>The exact day-by-day plans from our own trips, paced for kids and seniors. Follow the routes we took in Singapore, Thailand, Europe and India.</p>
         <a href="blueprints.html" class="pillar-link">View Itineraries →</a>
     </div>
 
     <!-- Pillar 2 -->
     <div class="pillar-card">
         <div class="pillar-icon">🛎️</div>
-        <h3>Curated Luxury Stays</h3>
-        <p>Honest reviews of 4 and 5-star properties graded on family amenities and pure-veg culinary excellence. Find your next stay and book our vetted recommendations directly.</p>
+        <h3>Where We've Stayed</h3>
+        <p>Honest notes on 4 and 5-star hotels we've stayed at or shortlisted for our own trips: room space, what's there for kids, and the vegetarian food.</p>
         <a href="stays.html" class="pillar-link">Read Hotel Reviews →</a>
     </div>
 
@@ -333,8 +353,8 @@
 </div>
 
 <div class="join-club">
-    <h2>Join the Inner Circle</h2>
-    <p>Follow our family's journeys for new luxury blueprints, honest property reviews, and pure-veg travel hacks as we discover them.</p>
+    <h2>Follow Our Trips</h2>
+    <p>New itineraries, honest hotel notes and pure-veg finds, as we travel.</p>
     <a href="https://www.instagram.com/vegstroller/" class="btn-primary" target="_blank" rel="noopener">Follow on Instagram</a>
 </div>
 

@@ -124,6 +124,11 @@
     .about-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
     .join-club .btn-primary + .btn-primary { margin-left: 12px; }
     @media (max-width: 600px) { .join-club .btn-primary + .btn-primary { margin: 12px 0 0; } }
+    .trip-strip { max-width: 1100px; margin: -40px auto 90px; padding: 0 20px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .trip-strip figure { margin: 0; }
+    .trip-strip img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .trip-strip figcaption { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-top: 8px; }
+    @media (max-width: 768px) { .trip-strip { grid-template-columns: 1fr 1fr; gap: 12px; margin: -20px auto 60px; } }
     .about-caption { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin: 10px 0 0; }
     .about-text a { color: #9a7b1c; }
     .about-text .about-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; color: #9a7b1c; margin: 0 0 10px; }
@@ -310,8 +315,8 @@
 
 <div class="about-us">
     <div class="about-photo">
-        <img src="images/home/nishant-paris.jpg" alt="Nishant at the top of the Eiffel Tower, Paris" width="720" height="900" loading="lazy" decoding="async">
-        <p class="about-caption">Me, at the top of the Eiffel Tower, Paris</p>
+        <img src="images/home/nishant-lauterbrunnen.jpg" alt="Nishant below the Staubbach waterfall in Lauterbrunnen, Switzerland" width="720" height="900" loading="lazy" decoding="async">
+        <p class="about-caption">Me, at Lauterbrunnen, Switzerland</p>
     </div>
     <div class="about-text">
         <p class="about-eyebrow">Who we are</p>
@@ -320,6 +325,13 @@
         <p>That's 26 days across Europe that I planned myself, a week in Ladakh, Singapore, Kashmir, and over 15 shorter trips, from Rishikesh and Goa to Munnar, Kumarakom, Udupi and Mahabaleshwar. I do all the planning, research and booking, and everything I learn ends up here and on our <a href="https://www.instagram.com/vegstroller/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.youtube.com/@vegstroller" target="_blank" rel="noopener">YouTube</a>.</p>
         <p class="about-note">We're not a travel agency. We don't sell packages or take bookings. We just share what worked for our family, and what didn't.</p>
     </div>
+</div>
+
+<div class="trip-strip">
+    <figure><img src="images/home/trip-interlaken-family.jpg" alt="Three generations of the family on a bridge over the river in Interlaken" width="800" height="600" loading="lazy" decoding="async"><figcaption>Interlaken, with the grandparents</figcaption></figure>
+    <figure><img src="images/home/trip-paris-seine.jpg" alt="Two girls looking out over the Seine in Paris" width="800" height="600" loading="lazy" decoding="async"><figcaption>The girls by the Seine, Paris</figcaption></figure>
+    <figure><img src="images/home/trip-mangalore-girls.jpg" alt="Two girls looking out of an arched window at palm trees" width="800" height="600" loading="lazy" decoding="async"><figcaption>Morning view, Mangalore</figcaption></figure>
+    <figure><img src="images/home/trip-mangalore-swing.jpg" alt="A couple on a swing looking out at palm trees" width="800" height="600" loading="lazy" decoding="async"><figcaption>A quiet moment, Mangalore</figcaption></figure>
 </div>
 
 <div id="pillars" class="pillars">

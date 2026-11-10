@@ -75,11 +75,20 @@
     .btn-map:hover { background: var(--gold); color: var(--charcoal); }
     .no-results { text-align: center; padding: 60px; color: var(--text-light); display: none; }
 
-    /* Hotels with a veg kitchen */
-    .hotel-note { margin-top: 80px; text-align: center; }
-    .hotel-note h2 { font-size: 28px; margin-bottom: 10px; }
-    .hotel-note > p { color: var(--text-light); max-width: 680px; margin: 0 auto 30px; }
-    .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 820px; margin: 0 auto; text-align: left; }
+    /* Breadcrumbs and drill-down tiles (same as stays.html) */
+    .breadcrumbs { text-align: center; margin-bottom: 30px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--text-light); display: none; }
+    .breadcrumbs span { cursor: pointer; transition: color 0.3s; }
+    .breadcrumbs span:hover { color: var(--gold); }
+    .breadcrumbs .current { color: var(--charcoal); cursor: default; }
+    .tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .nav-tile { height: 300px; background-color: var(--charcoal); background-size: cover; background-position: center; position: relative; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.4s ease; }
+    .nav-tile::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); transition: background 0.4s ease; }
+    .nav-tile.plain::before { background: radial-gradient(circle at 30% 20%, rgba(212,175,55,0.22), transparent 60%); }
+    .nav-tile:hover { transform: translateY(-8px); }
+    .nav-tile:hover::before { background-color: rgba(0,0,0,0.25); }
+    .nav-tile h2 { position: relative; color: #fff; font-size: 28px; text-transform: uppercase; letter-spacing: 3px; text-align: center; padding: 0 20px; }
+    .nav-tile p { position: relative; color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin: 10px 0 0; }
+    .listing { display: none; }
 
     .btn-primary { display: inline-block; background-color: transparent; border: 1px solid var(--gold); color: var(--gold-text); padding: 15px 40px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; transition: all 0.3s ease; }
     .btn-primary:hover { background-color: var(--gold); color: var(--charcoal); }
@@ -112,30 +121,36 @@
 </header>
 
 <div class="page-header">
-    <h1>Where Our Family Eats</h1>
-    <p>Our pure vegetarian picks, at home in Pune and on our travels. Filter by city, cuisine or dietary need to find a meal the whole family will enjoy.</p>
+    <h1 id="main-title">Where Our Family Eats</h1>
+    <p>Our pure vegetarian picks, at home and on our travels. Choose a destination, then filter by city, cuisine or dietary need.</p>
 </div>
 
 <div class="promise"><strong>Our one rule:</strong> every restaurant on this list is 100% vegetarian. No meat, no fish, no egg.</div>
 
-<div class="content-container">
-    <div class="controls-bar">
-        <div class="control-row" id="city-pills"><span class="control-label">City</span></div>
-        <div class="control-row" id="diet-pills"><span class="control-label">Options for</span></div>
-        <div class="control-row">
-            <span class="control-label">Cuisine</span>
-            <select id="cuisine-select" aria-label="Cuisine"><option value="">All cuisines</option></select>
-            <input type="text" id="search" placeholder="Search restaurants, dishes, areas..." aria-label="Search">
-        </div>
-    </div>
-    <div class="result-count" id="result-count"></div>
-    <div class="dining-grid" id="dining-grid"></div>
-    <div class="no-results" id="no-results">No restaurants match these filters yet. Try removing one.</div>
+<div id="breadcrumbs" class="breadcrumbs">
+    <span onclick="showZones()">All Destinations</span>
+    <span id="crumb-sep" style="display:none;"> &gt; </span>
+    <span id="crumb-zone" style="display:none;"></span>
+    <span id="crumb-sep-2" style="display:none;"> &gt; </span>
+    <span id="crumb-region" class="current" style="display:none;"></span>
+</div>
 
-    <div class="hotel-note">
-        <h2>Staying at a Hotel?</h2>
-        <p>These hotel restaurants are not pure vegetarian, so they are not part of the list above. We include them because they cook vegetarian food separately, which is rare and worth knowing.</p>
-        <div class="hotel-grid" id="hotel-grid"></div>
+<div class="content-container">
+    <div id="tile-grid" class="tile-grid"></div>
+
+    <div id="listing" class="listing">
+        <div class="controls-bar">
+            <div class="control-row" id="city-pills"><span class="control-label">City</span></div>
+            <div class="control-row" id="diet-pills"><span class="control-label">Options for</span></div>
+            <div class="control-row">
+                <span class="control-label">Cuisine</span>
+                <select id="cuisine-select" aria-label="Cuisine"><option value="">All cuisines</option></select>
+                <input type="text" id="search" placeholder="Search restaurants, dishes, areas..." aria-label="Search">
+            </div>
+        </div>
+        <div class="result-count" id="result-count"></div>
+        <div class="dining-grid" id="dining-grid"></div>
+        <div class="no-results" id="no-results">No restaurants match these filters yet. Try removing one.</div>
     </div>
 </div>
 
@@ -148,72 +163,83 @@
 <script>
 // ============================================================
 // THE LIST. To add a restaurant, copy one block and edit it.
+// zone / region / city: where it appears. Chains go under
+//   zone "Across India", region "Across India", city "Multiple cities".
 // category: "Experience dining" | "Fine dining" | "Casual dining"
 // seating:  "Non-AC seating" for simple, fan-cooled seating (optional)
-// visited:  true = our family has eaten here
+// visited:  true = our family has eaten here (shows "Our rating")
+//           false = on our list (no rating shown until we visit)
 // ============================================================
 const restaurants = [
-  { name: "Avatara", category: "Experience dining", cuisine: "Indian", group: "Indian", city: "Mumbai", area: "Santacruz West", format: "Tasting menu",
+  { name: "Avatara", category: "Experience dining", cuisine: "Indian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Mumbai", area: "Santacruz West", format: "Tasting menu",
     note: "Award-winning restaurant with an experiential tasting menu", rating: 4.75, vegan: true, jain: true, gf: true, visited: false },
-  { name: "Burma Burma", category: "Fine dining", cuisine: "Burmese", group: "Asian", city: "Multiple cities", area: "Multiple outlets", format: "Curated menu",
+  { name: "Burma Burma", category: "Fine dining", cuisine: "Burmese", group: "Asian", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "Curated menu",
     note: "A must-visit", rating: 4.75, vegan: true, jain: true, gf: true, visited: false },
-  { name: "Rajdhani", category: "Fine dining", cuisine: "Rajasthani", group: "Indian", city: "Multiple cities", area: "Multiple outlets", format: "Thali",
+  { name: "Rajdhani", category: "Fine dining", cuisine: "Rajasthani", group: "Indian", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "Thali",
     note: "An evergreen family favourite", rating: 4.5, vegan: false, jain: false, gf: false, visited: true },
-  { name: "Sante Spa Cuisine", category: "Fine dining", cuisine: "Organic and healthy", group: "Healthy and plant-based", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
+  { name: "Sante Spa Cuisine", category: "Fine dining", cuisine: "Organic and healthy", group: "Healthy and plant-based", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "A must-try", rating: 4.5, vegan: true, jain: true, gf: true, visited: true },
-  { name: "Tóa 66", category: "Experience dining", cuisine: "Thai", group: "Asian", city: "Mumbai", area: "Churchgate", format: "Curated menu",
+  { name: "Tóa 66", category: "Experience dining", cuisine: "Thai", group: "Asian", zone: "West India", region: "Maharashtra", city: "Mumbai", area: "Churchgate", format: "Curated menu",
     note: "Reserve your table in advance", rating: 4.5, vegan: true, jain: true, gf: true, visited: false },
-  { name: "Tsas by Dolkhar", category: "Fine dining", cuisine: "Ladakhi and multi-cuisine", group: "Indian", city: "Leh", area: "Lower Tukcha Road", format: "À la carte",
+  { name: "Tsas by Dolkhar", category: "Fine dining", cuisine: "Ladakhi and multi-cuisine", group: "Indian", zone: "North India", region: "Ladakh", city: "Leh", area: "Lower Tukcha Road", format: "À la carte",
     note: "A good place to try authentic Ladakhi dishes", rating: 4.5, vegan: true, jain: true, gf: true, visited: false },
-  { name: "The Rameshwaram Cafe", category: "Casual dining", seating: "Non-AC seating", cuisine: "South Indian", group: "South Indian", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
+  { name: "The Rameshwaram Cafe", category: "Casual dining", seating: "Non-AC seating", cuisine: "South Indian", group: "South Indian", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Expect a long queue outside, but the food is very good", rating: 4.25, vegan: false, jain: false, gf: false, visited: true },
-  { name: "Café Paashh", category: "Fine dining", cuisine: "Vegan, multi-cuisine", group: "Healthy and plant-based", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
+  { name: "Café Paashh", category: "Fine dining", cuisine: "Vegan, multi-cuisine", group: "Healthy and plant-based", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Good food and a lovely ambience", rating: 4.25, vegan: true, jain: true, gf: true, visited: true },
-  { name: "Purnabramha", category: "Fine dining", cuisine: "Maharashtrian", group: "Indian", city: "Pune", area: "Nyati Mall", format: "À la carte",
+  { name: "Purnabramha", category: "Fine dining", cuisine: "Maharashtrian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Pune", area: "Nyati Mall", format: "À la carte",
     note: "Worth a visit for authentic Maharashtrian vegetarian food", rating: 4, vegan: true, jain: false, gf: true, visited: true },
-  { name: "Vihara (The Regenza by Tunga)", category: "Fine dining", cuisine: "Indian", group: "Indian", city: "Mumbai", area: "Vashi, Navi Mumbai", format: "À la carte",
+  { name: "Vihara (The Regenza by Tunga)", category: "Fine dining", cuisine: "Indian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Mumbai", area: "Vashi, Navi Mumbai", format: "À la carte",
     note: "Tasty food", rating: 4, vegan: false, jain: true, gf: false, visited: true },
-  { name: "Bodhi Terrace", category: "Casual dining", seating: "Non-AC seating", cuisine: "Vegan, multi-cuisine", group: "Healthy and plant-based", city: "Leh", area: "Leh Market", format: "À la carte",
+  { name: "Bodhi Terrace", category: "Casual dining", seating: "Non-AC seating", cuisine: "Vegan, multi-cuisine", group: "Healthy and plant-based", zone: "North India", region: "Ladakh", city: "Leh", area: "Leh Market", format: "À la carte",
     note: "Good food in a pleasant setting", rating: 4, vegan: true, jain: true, gf: true, visited: true },
-  { name: "Cream Centre", category: "Fine dining", cuisine: "Multi-cuisine", group: "Multi-cuisine", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
+  { name: "Cream Centre", category: "Fine dining", cuisine: "Multi-cuisine", group: "Multi-cuisine", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Good food and ambience", rating: 4, vegan: false, jain: true, gf: false, visited: true },
-  { name: "Little Italy", category: "Casual dining", cuisine: "Italian", group: "Italian", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
+  { name: "Little Italy", category: "Casual dining", cuisine: "Italian", group: "Italian", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Dependable Italian", rating: 4, vegan: true, jain: true, gf: true, visited: true },
-  { name: "The Green Spoon", category: "Fine dining", cuisine: "Multi-cuisine", group: "Multi-cuisine", city: "Pune", area: "Baner", format: "À la carte",
+  { name: "The Green Spoon", category: "Fine dining", cuisine: "Multi-cuisine", group: "Multi-cuisine", zone: "West India", region: "Maharashtra", city: "Pune", area: "Baner", format: "À la carte",
     note: "A dependable choice in Baner", rating: 4, vegan: false, jain: false, gf: false, visited: false },
-  { name: "Earth Café", category: "Casual dining", cuisine: "Plant-based, multi-cuisine", group: "Healthy and plant-based", city: "Mumbai", area: "Multiple outlets", format: "À la carte",
+  { name: "Earth Café", category: "Casual dining", cuisine: "Plant-based, multi-cuisine", group: "Healthy and plant-based", zone: "West India", region: "Maharashtra", city: "Mumbai", area: "Multiple outlets", format: "À la carte",
     note: "Good food", rating: 4, vegan: true, jain: true, gf: true, visited: false },
-  { name: "Greenr", category: "Casual dining", cuisine: "Plant-based, multi-cuisine", group: "Healthy and plant-based", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
+  { name: "Greenr", category: "Casual dining", cuisine: "Plant-based, multi-cuisine", group: "Healthy and plant-based", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Good food", rating: 4, vegan: true, jain: false, gf: true, visited: false },
-  { name: "Malgudi", category: "Fine dining", cuisine: "South Indian", group: "South Indian", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
+  { name: "Malgudi", category: "Fine dining", cuisine: "South Indian", group: "South Indian", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Good South Indian food", rating: 4, vegan: false, jain: false, gf: false, visited: false },
-  { name: "Sukanta", category: "Fine dining", cuisine: "Rajasthani and Maharashtrian", group: "Indian", city: "Pune", area: "Deccan", format: "Thali",
+  { name: "Sukanta", category: "Fine dining", cuisine: "Rajasthani and Maharashtrian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Pune", area: "Deccan", format: "Thali",
     note: "Visit in summer for the unlimited aamras thali", rating: 3.75, vegan: false, jain: false, gf: false, visited: true },
-  { name: "Shinde Dairy", category: "Casual dining", seating: "Non-AC seating", cuisine: "Sweets and chaat", group: "Indian", city: "Pune", area: "Kharadi", format: "À la carte",
+  { name: "Shinde Dairy", category: "Casual dining", seating: "Non-AC seating", cuisine: "Sweets and chaat", group: "Indian", zone: "West India", region: "Maharashtra", city: "Pune", area: "Kharadi", format: "À la carte",
     note: "North Indian-style chaat, delicious jalebi with rabdi, and chole kulche", rating: 3.75, vegan: false, jain: false, gf: false, visited: true },
-  { name: "Kalyani Veg", category: "Casual dining", seating: "Non-AC seating", cuisine: "Indian", group: "Indian", city: "Pune", area: "Kalyani Nagar", format: "À la carte",
+  { name: "Kalyani Veg", category: "Casual dining", seating: "Non-AC seating", cuisine: "Indian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Pune", area: "Kalyani Nagar", format: "À la carte",
     note: "Quick service and hygienic food", rating: 3.5, vegan: false, jain: true, gf: false, visited: true },
-  { name: "Vaishali", category: "Casual dining", cuisine: "Indian", group: "Indian", city: "Pune", area: "FC Road", format: "À la carte",
+  { name: "Vaishali", category: "Casual dining", cuisine: "Indian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Pune", area: "FC Road", format: "À la carte",
     note: "FC Road's most popular hangout. Decent food, but expect a long wait for a table", rating: 3.5, vegan: false, jain: false, gf: false, visited: true },
-  { name: "Neha Snacks", category: "Casual dining", cuisine: "Indian", group: "Indian", city: "Leh", area: "Leh Market", format: "À la carte",
+  { name: "Neha Snacks", category: "Casual dining", cuisine: "Indian", group: "Indian", zone: "North India", region: "Ladakh", city: "Leh", area: "Leh Market", format: "À la carte",
     note: "Simple food, good for a quick meal", rating: 3.5, vegan: false, jain: false, gf: false, visited: true }
 ];
 
-// Hotel restaurants that are NOT pure veg but cook vegetarian food separately
-const hotels = [
-  { name: "The Khyber Himalayan Resort", category: "Hotel dining", cuisine: "Multi-cuisine", city: "Gulmarg, Kashmir", area: "The Khyber", format: "Buffet and à la carte",
-    note: "They have a separate kitchen for vegetarian food", rating: 4.5, vegan: true, jain: true, gf: true, visited: true },
-  { name: "Taj Dal View", category: "Hotel dining", cuisine: "Multi-cuisine", city: "Srinagar, Kashmir", area: "Taj Dal View", format: "Buffet and à la carte",
-    note: "They use separate utensils for vegetarian food", rating: 4.5, vegan: true, jain: true, gf: true, visited: true }
+
+// Destination tiles (same images as Luxury Stays)
+const zones = [
+  { name: "West India", image: "https://images.unsplash.com/photo-1582719478250-c89d14c77345?q=80&w=800&auto=format" },
+  { name: "North India", image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?q=80&w=800&auto=format" },
+  { name: "Across India", subtitle: "Chains we trust in many cities" }
+];
+const regions = [
+  { zone: "West India", name: "Maharashtra", image: "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?q=80&w=800&auto=format" },
+  { zone: "North India", name: "Ladakh", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800&auto=format" }
 ];
 
 const DIETS = [["jain", "Jain"], ["vegan", "Vegan"], ["gf", "Gluten-free"]];
-let activeCity = "All";
+let currentZone = "", currentRegion = "", activeCity = "All";
 const activeDiets = new Set();
+
+const $ = id => document.getElementById(id);
+const countIn = (key, val) => restaurants.filter(r => r[key] === val).length;
+const plural = n => n + (n === 1 ? " restaurant" : " restaurants");
 
 function stars(r) {
   const full = Math.floor(r), half = r - full >= 0.5 ? 1 : 0;
-  return "★".repeat(full) + (half ? "½" : "") ;
+  return "★".repeat(full) + (half ? "½" : "");
 }
 function mapsUrl(r) {
   const multi = r.area === "Multiple outlets";
@@ -225,14 +251,17 @@ function cardHTML(r) {
   const seat = r.seating ? `<span class="badge seat">${r.seating}</span>` : "";
   const who = r.visited ? `<span class="badge visited">We've eaten here</span>` : `<span class="badge list">On our list</span>`;
   const multi = r.area === "Multiple outlets";
+  const rating = r.visited
+    ? `<div class="rating"><span class="num">${r.rating}</span><span class="stars">${stars(r.rating)}</span><span class="lbl">Our rating</span></div>`
+    : "";
   return `
-  <div class="dining-card${r.rating >= 4.5 ? " top" : ""}">
+  <div class="dining-card${r.visited && r.rating >= 4.5 ? " top" : ""}">
     <div class="card-head">
       <div>
         <h3>${r.name}</h3>
         <div class="card-location">${multi ? r.city : r.area + " · " + r.city}</div>
       </div>
-      <div class="rating"><span class="num">${r.rating}</span><span class="stars">${stars(r.rating)}</span><span class="lbl">${r.visited ? "Our rating" : "Rating"}</span></div>
+      ${rating}
     </div>
     <div class="cuisine">${r.cuisine}</div>
     <div class="format">${r.category} · ${r.format}</div>
@@ -242,18 +271,86 @@ function cardHTML(r) {
   </div>`;
 }
 
+function tile(name, sub, image, onclick) {
+  const bg = image ? ` style="background-image: url('${image}')"` : "";
+  return `<div class="nav-tile${image ? "" : " plain"}"${bg} onclick="${onclick}"><h2>${name}</h2><p>${sub}</p></div>`;
+}
+
+function setCrumbs(zone, region) {
+  $("breadcrumbs").style.display = zone ? "block" : "none";
+  $("crumb-sep").style.display = $("crumb-zone").style.display = zone ? "inline" : "none";
+  $("crumb-zone").textContent = zone || "";
+  $("crumb-zone").className = region ? "" : "current";
+  $("crumb-zone").onclick = region ? () => showRegions(zone) : null;
+  $("crumb-sep-2").style.display = $("crumb-region").style.display = region ? "inline" : "none";
+  $("crumb-region").textContent = region || "";
+}
+
+function showZones() {
+  currentZone = currentRegion = "";
+  $("listing").style.display = "none";
+  $("tile-grid").style.display = "grid";
+  $("main-title").textContent = "Where Our Family Eats";
+  setCrumbs();
+  $("tile-grid").innerHTML = zones.map(z =>
+    tile(z.name, z.subtitle || plural(countIn("zone", z.name)), z.image,
+      z.name === "Across India" ? "showRestaurants('Across India','Across India')" : `showRegions('${z.name}')`)).join("");
+}
+
+function showRegions(zoneName) {
+  currentZone = zoneName;
+  $("listing").style.display = "none";
+  $("tile-grid").style.display = "grid";
+  $("main-title").textContent = "Veg Dining in " + zoneName;
+  setCrumbs(zoneName);
+  $("tile-grid").innerHTML = regions.filter(r => r.zone === zoneName)
+    .map(r => tile(r.name, plural(countIn("region", r.name)), r.image, `showRestaurants('${zoneName}','${r.name}')`)).join("");
+}
+
+function showRestaurants(zoneName, regionName) {
+  currentZone = zoneName; currentRegion = regionName; activeCity = "All";
+  activeDiets.clear();
+  $("search").value = ""; $("cuisine-select").value = "";
+  $("tile-grid").style.display = "none";
+  $("listing").style.display = "block";
+  $("main-title").textContent = regionName === "Across India" ? "Chains We Trust Across India" : "Veg Dining in " + regionName;
+  zoneName === regionName ? setCrumbs(zoneName) : setCrumbs(zoneName, regionName);
+
+  const inRegion = restaurants.filter(r => r.region === regionName);
+  const cities = [...new Set(inRegion.map(r => r.city))].sort();
+  const cityRow = $("city-pills");
+  cityRow.innerHTML = '<span class="control-label">City</span>';
+  cityRow.style.display = cities.length > 1 ? "flex" : "none";
+  ["All", ...cities].forEach(c => cityRow.appendChild(pill(c === "All" ? "All Cities" : c, b => {
+    activeCity = c;
+    cityRow.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+    b.classList.add("active");
+    render();
+  }, c === "All")));
+  $("diet-pills").querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+
+  const sel = $("cuisine-select");
+  sel.innerHTML = '<option value="">All cuisines</option>';
+  [...new Set(inRegion.map(r => r.group))].sort().forEach(g => {
+    const o = document.createElement("option"); o.value = g; o.textContent = g; sel.appendChild(o);
+  });
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function render() {
-  const cuisine = document.getElementById("cuisine-select").value;
-  const q = document.getElementById("search").value.trim().toLowerCase();
+  const cuisine = $("cuisine-select").value;
+  const q = $("search").value.trim().toLowerCase();
   const list = restaurants
+    .filter(r => r.region === currentRegion)
     .filter(r => activeCity === "All" || r.city === activeCity)
     .filter(r => [...activeDiets].every(k => r[k]))
     .filter(r => !cuisine || r.group === cuisine)
     .filter(r => !q || [r.name, r.cuisine, r.city, r.area, r.note, r.category].join(" ").toLowerCase().includes(q))
-    .sort((a, b) => b.rating - a.rating);
-  document.getElementById("dining-grid").innerHTML = list.map(cardHTML).join("");
-  document.getElementById("no-results").style.display = list.length ? "none" : "block";
-  document.getElementById("result-count").textContent = list.length + (list.length === 1 ? " restaurant" : " restaurants");
+    .sort((a, b) => (b.visited - a.visited) || (b.rating - a.rating));
+  $("dining-grid").innerHTML = list.map(cardHTML).join("");
+  $("no-results").style.display = list.length ? "none" : "block";
+  $("result-count").textContent = plural(list.length);
 }
 
 function pill(label, onClick, active) {
@@ -266,31 +363,15 @@ function pill(label, onClick, active) {
 }
 
 (function init() {
-  const cities = ["All", ...[...new Set(restaurants.map(r => r.city))].sort((a, b) => (a === "Multiple cities") - (b === "Multiple cities") || a.localeCompare(b))];
-  const cityRow = document.getElementById("city-pills");
-  cities.forEach(c => cityRow.appendChild(pill(c, b => {
-    activeCity = c;
-    cityRow.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
-    b.classList.add("active");
-    render();
-  }, c === "All")));
-
-  const dietRow = document.getElementById("diet-pills");
+  const dietRow = $("diet-pills");
   DIETS.forEach(([k, l]) => dietRow.appendChild(pill(l, b => {
     activeDiets.has(k) ? activeDiets.delete(k) : activeDiets.add(k);
     b.classList.toggle("active");
     render();
   }, false)));
-
-  const sel = document.getElementById("cuisine-select");
-  [...new Set(restaurants.map(r => r.group))].sort().forEach(g => {
-    const o = document.createElement("option"); o.value = g; o.textContent = g; sel.appendChild(o);
-  });
-  sel.addEventListener("change", render);
-  document.getElementById("search").addEventListener("input", render);
-
-  document.getElementById("hotel-grid").innerHTML = hotels.map(cardHTML).join("");
-  render();
+  $("cuisine-select").addEventListener("change", render);
+  $("search").addEventListener("input", render);
+  showZones();
 })();
 </script>
 

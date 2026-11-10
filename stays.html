@@ -42,14 +42,14 @@
     nav a:hover { color: var(--gold); }
 
     /* Page Header */
-    .page-header { text-align: center; padding: 60px 20px 30px; }
-    .page-header h1 { font-size: 42px; margin-bottom: 15px; }
-    .page-header p { color: var(--text-light); max-width: 650px; margin: 0 auto; font-size: 16px; }
+    .page-header { text-align: center; padding: 36px 20px 18px; }
+    .page-header h1 { font-size: 36px; margin-bottom: 8px; }
+    .page-header p { color: var(--text-light); max-width: 650px; margin: 0 auto; font-size: 15px; }
 
     /* Breadcrumbs */
     .breadcrumbs {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 18px;
         font-size: 12px;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -76,7 +76,7 @@
     }
 
     .nav-tile {
-        height: 300px;
+        height: 260px;
         background-size: cover;
         background-position: center;
         position: relative;
@@ -108,8 +108,8 @@
     .controls-bar {
         display: none;
         background: #fff;
-        padding: 25px 30px;
-        margin-bottom: 40px;
+        padding: 16px 24px;
+        margin-bottom: 28px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.03);
         border-top: 3px solid var(--gold);
         gap: 20px;
@@ -142,6 +142,7 @@
         border-color: var(--charcoal);
     }
 
+    .city-select { padding: 10px 14px; border: 1px solid var(--border-color); font-family: 'Lato', sans-serif; font-size: 13px; background: #fff; min-width: 260px; outline: none; }
     .search-box {
         position: relative;
         min-width: 250px;
@@ -262,6 +263,11 @@
         nav a { margin: 10px; }
         .controls-bar { flex-direction: column; align-items: stretch; }
         .search-box { width: 100%; }
+        .city-select { width: 100%; min-width: 0; }
+        .page-header h1 { font-size: 28px; }
+        .nav-tile { height: 180px; }
+        .breadcrumbs { padding: 0 16px; letter-spacing: 1px; }
+        .controls-bar { padding: 14px 16px; }
     }
 </style>
 </head>
@@ -273,6 +279,7 @@
         <a href="index.html">Home</a>
         <a href="blueprints.html">Blueprints</a>
         <a href="stays.html" style="color: var(--gold);">Luxury Stays</a>
+        <a href="veg-dining.html">Veg Dining</a>
     </nav>
 </header>
 
@@ -2904,6 +2911,7 @@
         noResultsMsg.style.display = "none";
         breadcrumbs.style.display = "none";
         mainTitle.innerText = "The Global Portfolio";
+        document.getElementById('main-subtitle').style.display = "block";
         
         let html = "";
         zones.forEach(zone => {
@@ -2930,6 +2938,7 @@
         document.getElementById('crumb-region').style.display = "none";
         
         mainTitle.innerText = `Destinations in ${zoneName}`;
+        document.getElementById('main-subtitle').style.display = "block";
 
         let filteredRegions = regions.filter(r => r.zone === zoneName);
         let html = "";
@@ -2954,6 +2963,7 @@
         document.getElementById('crumb-region').innerText = regionName;
         
         mainTitle.innerText = `Luxury Stays in ${regionName}`;
+        document.getElementById('main-subtitle').style.display = "none";
 
         let regionHotels = hotels.filter(h => h.region.toLowerCase() === regionName.toLowerCase());
         let cities = [...new Set(regionHotels.map(h => h.city))].sort();
@@ -2962,6 +2972,11 @@
         cities.forEach(city => {
             pillsHtml += `<div class="city-pill" onclick="selectCity('${city}', this)">${city}</div>`;
         });
+        if (cities.length > 6) {
+            // Many cities: a compact dropdown instead of rows of pills
+            pillsHtml = `<select class="city-select" onchange="selectCityValue(this.value)" aria-label="City"><option value="all">All Cities</option>` +
+                cities.map(c => `<option value="${c}">${c}</option>`).join('') + `</select>`;
+        }
         cityPillsContainer.innerHTML = pillsHtml;
 
         renderHotelCards(regionHotels);
@@ -2971,6 +2986,11 @@
         selectedCity = cityName;
         document.querySelectorAll('.city-pill').forEach(p => p.classList.remove('active'));
         element.classList.add('active');
+        filterHotels();
+    }
+
+    function selectCityValue(cityName) {
+        selectedCity = cityName;
         filterHotels();
     }
 

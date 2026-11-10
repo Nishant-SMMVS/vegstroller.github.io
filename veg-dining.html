@@ -28,17 +28,17 @@
     nav a { text-decoration: none; color: #fff; margin-left: 40px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
     nav a:hover { color: var(--gold); }
 
-    .page-header { text-align: center; padding: 60px 20px 20px; }
-    .page-header h1 { font-size: 42px; margin-bottom: 15px; }
-    .page-header p { color: var(--text-light); max-width: 680px; margin: 0 auto; font-size: 16px; }
+    .page-header { text-align: center; padding: 36px 20px 6px; }
+    .page-header h1 { font-size: 36px; margin-bottom: 8px; }
+    .page-header p { color: var(--text-light); max-width: 680px; margin: 0 auto; font-size: 15px; }
 
-    .promise { max-width: 760px; margin: 30px auto 40px; width: calc(100% - 40px); background: #F9F6EE; border-left: 3px solid var(--gold); padding: 16px 22px; font-size: 15px; color: #444; }
-    .promise strong { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: 1px; color: var(--charcoal); }
+    .promise { text-align: center; margin: 4px auto 22px; padding: 0 20px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--gold-text); }
+    .promise span { color: var(--gold); margin: 0 8px; }
 
     .content-container { max-width: 1200px; margin: 0 auto 80px; padding: 0 20px; }
 
     /* Controls (same family as the stays filter bar) */
-    .controls-bar { background: #fff; padding: 25px 30px; margin-bottom: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-top: 3px solid var(--gold); display: flex; flex-direction: column; gap: 16px; }
+    .controls-bar { background: #fff; padding: 16px 24px; margin-bottom: 28px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-top: 3px solid var(--gold); display: flex; flex-direction: column; gap: 10px; }
     .control-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .control-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--text-light); min-width: 90px; }
     .pill { background: #f4f4f4; border: 1px solid var(--border-color); padding: 8px 16px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; font-weight: 700; color: var(--text-dark); font-family: 'Lato', sans-serif; }
@@ -46,7 +46,7 @@
     .control-row select, .control-row input { padding: 10px 14px; border: 1px solid var(--border-color); font-family: 'Lato', sans-serif; font-size: 13px; outline: none; background: #fff; }
     .control-row input { flex: 1; min-width: 220px; }
 
-    .result-count { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin: -20px 0 24px; }
+    .result-count { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin: -14px 0 16px; }
 
     /* Cards */
     .dining-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px; }
@@ -76,12 +76,12 @@
     .no-results { text-align: center; padding: 60px; color: var(--text-light); display: none; }
 
     /* Breadcrumbs and drill-down tiles (same as stays.html) */
-    .breadcrumbs { text-align: center; margin-bottom: 30px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--text-light); display: none; }
+    .breadcrumbs { text-align: center; margin-bottom: 18px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--text-light); display: none; }
     .breadcrumbs span { cursor: pointer; transition: color 0.3s; }
     .breadcrumbs span:hover { color: var(--gold); }
     .breadcrumbs .current { color: var(--charcoal); cursor: default; }
     .tile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .nav-tile { height: 300px; background-color: var(--charcoal); background-size: cover; background-position: center; position: relative; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.4s ease; }
+    .nav-tile { height: 260px; background-color: var(--charcoal); background-size: cover; background-position: center; position: relative; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.4s ease; }
     .nav-tile::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); transition: background 0.4s ease; }
     .nav-tile.plain::before { background: radial-gradient(circle at 30% 20%, rgba(212,175,55,0.22), transparent 60%); }
     .nav-tile:hover { transform: translateY(-8px); }
@@ -101,9 +101,16 @@
     @media (max-width: 768px) {
         header { flex-direction: column; padding: 20px; text-align: center; }
         nav a { margin: 10px; display: inline-block; }
-        .page-header h1 { font-size: 32px; }
+        .page-header h1 { font-size: 28px; }
+        .nav-tile { height: 180px; }
+        .controls-bar { gap: 8px; }
         .controls-bar { padding: 20px; }
-        .control-label { min-width: 100%; }
+        .control-label { min-width: auto; margin-right: 4px; }
+        .pill { padding: 7px 12px; }
+        .promise { letter-spacing: 1px; font-size: 10px; margin-bottom: 16px; }
+        .promise span { margin: 0 4px; }
+        .breadcrumbs { padding: 0 16px; letter-spacing: 1px; font-size: 11px; }
+        .controls-bar { padding: 14px 16px; }
         .dining-grid { grid-template-columns: 1fr; }
     }
 </style>
@@ -122,10 +129,10 @@
 
 <div class="page-header">
     <h1 id="main-title">Where Our Family Eats</h1>
-    <p>Our pure vegetarian picks, at home and on our travels. Choose a destination, then filter by city, cuisine or dietary need.</p>
+    <p id="intro">Our pure vegetarian picks, at home and on our travels. Choose a destination to begin.</p>
 </div>
 
-<div class="promise"><strong>Our one rule:</strong> every restaurant on this list is 100% vegetarian. No meat, no fish, no egg.</div>
+<div class="promise">100% vegetarian<span>·</span>No meat<span>·</span>No fish<span>·</span>No egg</div>
 
 <div id="breadcrumbs" class="breadcrumbs">
     <span onclick="showZones()">All Destinations</span>
@@ -187,7 +194,7 @@ const restaurants = [
     note: "Expect a long queue outside, but the food is very good", rating: 4.25, vegan: false, jain: false, gf: false, visited: true },
   { name: "Café Paashh", category: "Fine dining", cuisine: "Vegan, multi-cuisine", group: "Healthy and plant-based", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Good food and a lovely ambience", rating: 4.25, vegan: true, jain: true, gf: true, visited: true },
-  { name: "Purnabramha", category: "Fine dining", cuisine: "Maharashtrian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Pune", area: "Nyati Mall", format: "À la carte",
+  { name: "Purnabramha", category: "Fine dining", cuisine: "Maharashtrian", group: "Indian", zone: "Across India", region: "Across India", city: "Multiple cities", area: "Multiple outlets", format: "À la carte",
     note: "Worth a visit for authentic Maharashtrian vegetarian food", rating: 4, vegan: true, jain: false, gf: true, visited: true },
   { name: "Vihara (The Regenza by Tunga)", category: "Fine dining", cuisine: "Indian", group: "Indian", zone: "West India", region: "Maharashtra", city: "Mumbai", area: "Vashi, Navi Mumbai", format: "À la carte",
     note: "Tasty food", rating: 4, vegan: false, jain: true, gf: false, visited: true },
@@ -291,6 +298,7 @@ function showZones() {
   $("listing").style.display = "none";
   $("tile-grid").style.display = "grid";
   $("main-title").textContent = "Where Our Family Eats";
+  $("intro").style.display = "block";
   setCrumbs();
   $("tile-grid").innerHTML = zones.map(z =>
     tile(z.name, z.subtitle || plural(countIn("zone", z.name)), z.image,
@@ -302,6 +310,7 @@ function showRegions(zoneName) {
   $("listing").style.display = "none";
   $("tile-grid").style.display = "grid";
   $("main-title").textContent = "Veg Dining in " + zoneName;
+  $("intro").style.display = "none";
   setCrumbs(zoneName);
   $("tile-grid").innerHTML = regions.filter(r => r.zone === zoneName)
     .map(r => tile(r.name, plural(countIn("region", r.name)), r.image, `showRestaurants('${zoneName}','${r.name}')`)).join("");
@@ -313,6 +322,7 @@ function showRestaurants(zoneName, regionName) {
   $("search").value = ""; $("cuisine-select").value = "";
   $("tile-grid").style.display = "none";
   $("listing").style.display = "block";
+  $("intro").style.display = "none";
   $("main-title").textContent = regionName === "Across India" ? "Chains We Trust Across India" : "Veg Dining in " + regionName;
   zoneName === regionName ? setCrumbs(zoneName) : setCrumbs(zoneName, regionName);
 

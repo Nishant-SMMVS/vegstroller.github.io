@@ -744,6 +744,20 @@
         "area": "Chauda Bigha"
     },
     {
+        "name": "Vatsyayana Resort",
+        "zone": "North India",
+        "region": "Uttarakhand",
+        "city": "Jim Corbett",
+        "area": "Maulikhal",
+        "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format",
+        "badge": "Luxury Stay",
+        "basis": "On our list",
+        "pros": [],
+        "cons": [],
+        "agodaLink": "#",
+        "website": "https://vatsyayanaresorts.com/"
+    },
+    {
         "name": "Cidade De Goa Heritage",
         "zone": "West India",
         "region": "Goa",
@@ -2879,7 +2893,7 @@
                             </div>` : ''}
                         </div>` : `<p class="on-list-note">On our list for a future trip. We haven't stayed here yet, so no notes so far.</p>`}
 
-                        <a href="${hotel.agodaLink}" class="btn-agoda" target="_blank">Check Prices on Agoda</a>
+                        ${hotel.website ? `<a href="${hotel.website}" class="btn-agoda" target="_blank" rel="noopener">Visit Official Website</a>` : `<a href="${hotel.agodaLink}" class="btn-agoda" target="_blank">Check Prices on Agoda</a>`}
                     </div>
                 </div>
             `;
